@@ -17,6 +17,55 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            
+            // 1st tab - main
+            let mainVC = MainViewController()
+            let mainItem = UITabBarItem()
+            mainItem.title = "Home"
+            mainItem.image = UIImage(named: "home_icon")
+            mainVC.tabBarItem = mainItem
+            
+//            let quizVC = QuizViewController2()
+//            let quizVC:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "QuizViewController2") as UIViewController
+            // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+            
+            // 2rd tab
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let quizVC = mainStoryboard.instantiateViewController(withIdentifier:  "QuizViewController2")
+
+            let quizItem = UITabBarItem()
+            quizItem.title = "Quiz"
+            quizVC.tabBarItem = quizItem
+            
+            // 3rd tab
+            let searchVC = SearchViewController()
+            let searchItem = UITabBarItem()
+            searchItem.title = "search"
+            searchItem.image = UIImage()
+            searchVC.tabBarItem = searchItem
+            
+            // 4th tab
+            let mypageVC = MypageViewController()
+            let mypageItem = UITabBarItem()
+            mypageItem.title = "mypage"
+            mypageItem.image = UIImage(named: "home_icon")
+            mypageVC.tabBarItem = mypageItem
+            
+            let tabBarController = UITabBarController()
+            tabBarController.viewControllers = [mainVC, quizVC, searchVC, mypageVC]
+            
+            tabBarController.selectedViewController = mainVC
+            
+            tabBarController.tabBar.backgroundColor = UIColor.white
+            window.rootViewController = tabBarController
+            self.window = window
+            window.makeKeyAndVisible()
+//            window.rootViewController = tabBarController
+        }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

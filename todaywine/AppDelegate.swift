@@ -11,10 +11,51 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if #available(iOS 13, *) {
+            print("set in SceneDelegate")
+        } else {
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            
+            // 1st tab - main
+            let mainVC = MainViewController()
+            let mainItem = UITabBarItem()
+            mainItem.title = "Home"
+            mainItem.image = UIImage(named: "home_icon")
+            mainVC.tabBarItem = mainItem
+            
+            // 2rd tab - 퀴즈
+//            let quizVC = QuizViewController()
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let quizVC = mainStoryboard.instantiateViewController(withIdentifier:  "QuizViewController2")
+            let quizItem = UITabBarItem()
+            quizItem.title = "Quiz"
+            quizVC.tabBarItem = quizItem
+
+            // 3rd tab - 검색
+            let searchVC = SearchViewController()
+            let searchItem = UITabBarItem()
+            searchItem.title = "search"
+            searchItem.image = UIImage()
+            searchVC.tabBarItem = searchItem
+            
+            // 4th tab
+            let mypageVC = MypageViewController()
+            let mypageItem = UITabBarItem()
+            mypageItem.title = "mypage"
+            mypageItem.image = UIImage(named: "home_icon")
+            mypageVC.tabBarItem = mypageItem
+            
+            let tabBarController = UITabBarController()
+            tabBarController.viewControllers = [mainVC, quizVC, searchVC, mypageVC]
+            
+            tabBarController.selectedViewController = mainVC
+            
+            window.rootViewController = tabBarController
+        }
+        
         return true
     }
 
