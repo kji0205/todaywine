@@ -10,6 +10,9 @@ import UIKit
 
 class MainViewController: UIViewControllerBase {
     
+    var wines: [Wine] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +54,19 @@ class MainViewController: UIViewControllerBase {
         
 //        mainViewTitle.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
 //        mainViewTitle.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
+        
+        let jsonDecoder = JSONDecoder()
+        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
+            return
+        }
+        do {
+            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let wineIndex = Int.random(in: 0...wines.count-1)
+//        questionText.text = wines[wineIndex].name
         
     }
 }
