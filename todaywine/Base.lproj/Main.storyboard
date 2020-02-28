@@ -65,5 +65,41 @@
             </objects>
             <point key="canvasLocation" x="1113.0434782608697" y="-136.60714285714286"/>
         </scene>
+        <!--검색-->
+        <scene sceneID="6Fy-ve-yTs">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jJs-2v-AQy" customClass="SearchViewController" customModule="todaywine" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iA9-ZW-9So">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="검색" id="8fr-k4-jM2"/>
+                    <connections>
+                        <outlet property="searchResultTableView" destination="iA9-ZW-9So" id="TgL-My-Zvj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpw-hd-VPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2023.1884057971015" y="644.86607142857144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GKO-aH-s1S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9EN-aw-HLW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DSQ-1u-dMn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jJs-2v-AQy" kind="relationship" relationship="rootViewController" id="rXM-CV-3xA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="13O-Pt-Zyd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111.5942028985507" y="644.86607142857144"/>
+        </scene>
     </scenes>
 </document>

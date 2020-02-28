@@ -21,6 +21,10 @@
 		BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */; };
 		BFDAB3C02402BE10009CE055 /* QuizViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */; };
 		BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3C124084EA2009CE055 /* MypageViewController.swift */; };
+		BFDAB3C62408EA3F009CE055 /* wine.json in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3C52408EA3F009CE055 /* wine.json */; };
+		BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3C72408EA9D009CE055 /* Wine.swift */; };
+		BFDAB3CB2408F1F6009CE055 /* WineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3C92408F1F6009CE055 /* WineCell.swift */; };
+		BFDAB3CC2408F1F6009CE055 /* WineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3CA2408F1F6009CE055 /* WineCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerBase.swift; sourceTree = "<group>"; };
 		BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController2.swift; sourceTree = "<group>"; };
 		BFDAB3C124084EA2009CE055 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		BFDAB3C52408EA3F009CE055 /* wine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wine.json; sourceTree = "<group>"; };
+		BFDAB3C72408EA9D009CE055 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
+		BFDAB3C92408F1F6009CE055 /* WineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineCell.swift; sourceTree = "<group>"; };
+		BFDAB3CA2408F1F6009CE055 /* WineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WineCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +128,11 @@
 				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
 				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
+				BFDAB3C92408F1F6009CE055 /* WineCell.swift */,
+				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
+				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
 				BFDAB38D23FEA4DA009CE055 /* Main.storyboard */,
+				BFDAB3C52408EA3F009CE055 /* wine.json */,
 				BFDAB39023FEA4DD009CE055 /* Assets.xcassets */,
 				BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */,
 				BFDAB39523FEA4DD009CE055 /* Info.plist */,
@@ -250,6 +262,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDAB3CC2408F1F6009CE055 /* WineCell.xib in Resources */,
+				BFDAB3C62408EA3F009CE055 /* wine.json in Resources */,
 				BFDAB39423FEA4DD009CE055 /* LaunchScreen.storyboard in Resources */,
 				BFDAB39123FEA4DD009CE055 /* Assets.xcassets in Resources */,
 				BFDAB38F23FEA4DA009CE055 /* Main.storyboard in Resources */,
@@ -279,8 +293,10 @@
 			files = (
 				BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */,
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
+				BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */,
 				BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */,
 				BFDAB38C23FEA4DA009CE055 /* ViewController.swift in Sources */,
+				BFDAB3CB2408F1F6009CE055 /* WineCell.swift in Sources */,
 				BFDAB3BA23FEA560009CE055 /* QuizViewController.swift in Sources */,
 				BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */,
 				BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */,

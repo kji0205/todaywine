@@ -35,11 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             quizVC.tabBarItem = quizItem
 
             // 3rd tab - 검색
-            let searchVC = SearchViewController()
+            let searchVC = mainStoryboard.instantiateViewController(withIdentifier:  "SearchViewController")
             let searchItem = UITabBarItem()
             searchItem.title = "search"
             searchItem.image = UIImage()
             searchVC.tabBarItem = searchItem
+            let searchNVC = UINavigationController(rootViewController: searchVC)
             
             // 4th tab
             let mypageVC = MypageViewController()
@@ -49,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             mypageVC.tabBarItem = mypageItem
             
             let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [mainVC, quizVC, searchVC, mypageVC]
+            tabBarController.viewControllers = [mainVC, quizVC, searchNVC, mypageVC]
             
             tabBarController.selectedViewController = mainVC
             

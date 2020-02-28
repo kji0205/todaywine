@@ -41,11 +41,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             quizVC.tabBarItem = quizItem
             
             // 3rd tab
-            let searchVC = SearchViewController()
+            let searchVC = mainStoryboard.instantiateViewController(withIdentifier:  "SearchViewController")
             let searchItem = UITabBarItem()
             searchItem.title = "search"
             searchItem.image = UIImage()
             searchVC.tabBarItem = searchItem
+            let searchNVC = UINavigationController(rootViewController: searchVC)
             
             // 4th tab
             let mypageVC = MypageViewController()
@@ -54,12 +55,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             mypageItem.image = UIImage(named: "home_icon")
             mypageVC.tabBarItem = mypageItem
             
+            
+            
             let tabBarController = UITabBarController()
-            tabBarController.viewControllers = [mainVC, quizVC, searchVC, mypageVC]
+            tabBarController.viewControllers = [mainVC, quizVC, searchNVC, mypageVC]
             
             tabBarController.selectedViewController = mainVC
             
             tabBarController.tabBar.backgroundColor = UIColor.white
+            
+            
             window.rootViewController = tabBarController
             self.window = window
             window.makeKeyAndVisible()
