@@ -1,0 +1,37 @@
+[
+    {
+        "grade": "A",
+        "question": "1+1 = 2",
+        "answer": true
+    },
+    {
+        "grade": "A",
+        "question": "1+2 = 2",
+        "answer": false
+    },
+    {
+        "grade": "A",
+        "question": "3*7 = 2",
+        "answer": false
+    },
+    {
+        "grade": "A",
+        "question": "5-2 = 2",
+        "answer": false
+    },
+    {
+        "grade": "A",
+        "question": "1+23 = 24",
+        "answer": true
+    },
+    {
+        "grade": "A",
+        "question": "5+6 = 12",
+        "answer": false
+    },
+    {
+        "grade": "A",
+        "question": "1+A = 1A",
+        "answer": true
+    },
+]

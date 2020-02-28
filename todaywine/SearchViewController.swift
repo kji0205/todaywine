@@ -16,11 +16,6 @@ class SearchViewController: UIViewControllerBase {
     var isFiltered = false
     
     @IBOutlet weak var searchResultTableView: UITableView!
-    let cellIndentifier: String = "cell"
-    
-    // 셀 구성
-    // 필터된 결과
-    // 전체 결과
     
     override func viewDidLoad() {
         super.viewDidLoad()
