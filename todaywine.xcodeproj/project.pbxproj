@@ -27,6 +27,8 @@
 		BFDAB3CC2408F1F6009CE055 /* WineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3CA2408F1F6009CE055 /* WineCell.xib */; };
 		BFDAB3CE240932D3009CE055 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3CD240932D3009CE055 /* Quiz.swift */; };
 		BFDAB3D0240934AF009CE055 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3CF240934AF009CE055 /* quiz.json */; };
+		BFDAB3D224097FE5009CE055 /* TodayWineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */; };
+		BFDAB3D4240B9D5C009CE055 /* RecommendWineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		BFDAB3CA2408F1F6009CE055 /* WineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WineCell.xib; sourceTree = "<group>"; };
 		BFDAB3CD240932D3009CE055 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		BFDAB3CF240934AF009CE055 /* quiz.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = quiz.json; sourceTree = "<group>"; };
+		BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWineViewController.swift; sourceTree = "<group>"; };
+		BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendWineViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				BFDAB38B23FEA4DA009CE055 /* ViewController.swift */,
 				BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */,
 				BFDAB3B723FEA54A009CE055 /* MainViewController.swift */,
+				BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */,
 				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
 				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
@@ -136,6 +141,7 @@
 				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
 				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
 				BFDAB38D23FEA4DA009CE055 /* Main.storyboard */,
+				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
 				BFDAB3C52408EA3F009CE055 /* wine.json */,
 				BFDAB3CF240934AF009CE055 /* quiz.json */,
 				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
@@ -309,6 +315,8 @@
 				BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */,
 				BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */,
 				BFDAB3C02402BE10009CE055 /* QuizViewController2.swift in Sources */,
+				BFDAB3D224097FE5009CE055 /* TodayWineViewController.swift in Sources */,
+				BFDAB3D4240B9D5C009CE055 /* RecommendWineViewController.swift in Sources */,
 				BFDAB3B823FEA54A009CE055 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="todaywine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -27,7 +27,7 @@
             <objects>
                 <viewController storyboardIdentifier="QuizViewController2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6F2-Pu-JVN" customClass="QuizViewController2" customModule="todaywine" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kj1-gb-4NT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZW-ah-Xbu">
@@ -78,7 +78,7 @@
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jJs-2v-AQy" customClass="SearchViewController" customModule="todaywine" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iA9-ZW-9So">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </tableView>
@@ -91,13 +91,104 @@
             </objects>
             <point key="canvasLocation" x="2023.1884057971015" y="644.86607142857144"/>
         </scene>
+        <!--Today Wine View Controller-->
+        <scene sceneID="EE2-qg-COE">
+            <objects>
+                <viewController storyboardIdentifier="TodayWineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eR6-0t-8bS" customClass="TodayWineViewController" customModule="todaywine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uam-q8-59s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2wi-fk-e6s">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Recommend Wine" id="pdv-M6-nKL"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cliff-lede" translatesAutoresizingMaskIntoConstraints="NO" id="E9o-Np-tug">
+                                <rect key="frame" x="10" y="98" width="355" height="355"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="E9o-Np-tug" secondAttribute="height" multiplier="1:1" id="fdb-km-f2c"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIO-Fg-cbO">
+                                <rect key="frame" x="10" y="478" width="355" height="184"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2c-LO-rZ1" userLabel="name">
+                                        <rect key="frame" x="10" y="10" width="335" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xt8-cg-KUJ" userLabel="region">
+                                        <rect key="frame" x="10" y="103" width="335" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="grapes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASr-nH-mt4" userLabel="grapes">
+                                        <rect key="frame" x="10" y="72" width="335" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvb-EO-mEr" userLabel="country">
+                                        <rect key="frame" x="10" y="41" width="335" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dga-tt-XTb" userLabel="description label">
+                                        <rect key="frame" x="10" y="132" width="335" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BIO-Fg-cbO" secondAttribute="height" multiplier="355:184" id="adu-vZ-Wnk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="E9o-Np-tug" firstAttribute="leading" secondItem="bRy-K3-Aqn" secondAttribute="leading" constant="10" id="4Tm-Ui-KAE"/>
+                            <constraint firstItem="E9o-Np-tug" firstAttribute="top" secondItem="2wi-fk-e6s" secondAttribute="bottom" constant="10" id="Hha-Eb-OiZ"/>
+                            <constraint firstAttribute="trailing" secondItem="E9o-Np-tug" secondAttribute="trailing" constant="10" id="IRR-4M-ifJ"/>
+                            <constraint firstItem="bRy-K3-Aqn" firstAttribute="trailing" secondItem="BIO-Fg-cbO" secondAttribute="trailing" constant="10" id="ZSX-cw-TY4"/>
+                            <constraint firstItem="BIO-Fg-cbO" firstAttribute="leading" secondItem="bRy-K3-Aqn" secondAttribute="leading" constant="10" id="bhO-cE-JTI"/>
+                            <constraint firstItem="2wi-fk-e6s" firstAttribute="top" secondItem="bRy-K3-Aqn" secondAttribute="top" id="gwg-Q9-K2l"/>
+                            <constraint firstItem="BIO-Fg-cbO" firstAttribute="top" secondItem="E9o-Np-tug" secondAttribute="bottom" constant="25" id="nb2-0s-0sL"/>
+                            <constraint firstAttribute="trailing" secondItem="2wi-fk-e6s" secondAttribute="trailing" id="o2i-gt-e6n"/>
+                            <constraint firstItem="2wi-fk-e6s" firstAttribute="leading" secondItem="bRy-K3-Aqn" secondAttribute="leading" id="qMH-ua-6Y2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bRy-K3-Aqn"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryLabel" destination="Xt8-cg-KUJ" id="iCv-h3-c5U"/>
+                        <outlet property="descriptionLabel" destination="dga-tt-XTb" id="3IK-E1-k81"/>
+                        <outlet property="grapesLabel" destination="ASr-nH-mt4" id="8Mh-Zm-LUD"/>
+                        <outlet property="nameLabel" destination="N2c-LO-rZ1" id="hhC-wM-D6r"/>
+                        <outlet property="regionLabel" destination="Bvb-EO-mEr" id="csW-uv-Ckg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAc-J2-rG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168" y="974"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GKO-aH-s1S">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9EN-aw-HLW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DSQ-1u-dMn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -110,4 +201,7 @@
             <point key="canvasLocation" x="1111.5942028985507" y="644.86607142857144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cliff-lede" width="545" height="545"/>
+    </resources>
 </document>

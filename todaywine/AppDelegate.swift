@@ -18,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("set in SceneDelegate")
         } else {
             let window = UIWindow(frame: UIScreen.main.bounds)
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
             // 1st tab - main
-            let mainVC = MainViewController()
+            let mainVC = mainStoryboard.instantiateViewController(withIdentifier:  "TodayWineViewController")
             let mainItem = UITabBarItem()
             mainItem.title = "Home"
             mainItem.image = UIImage(named: "home_icon")
@@ -28,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // 2rd tab - 퀴즈
 //            let quizVC = QuizViewController()
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let quizVC = mainStoryboard.instantiateViewController(withIdentifier:  "QuizViewController2")
             let quizItem = UITabBarItem()
             quizItem.title = "Quiz"

@@ -20,9 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             
             // 1st tab - main
-            let mainVC = MainViewController()
+//            let mainVC = MainViewController()
+            let mainVC = mainStoryboard.instantiateViewController(withIdentifier:  "TodayWineViewController")
             let mainItem = UITabBarItem()
             mainItem.title = "Home"
             mainItem.image = UIImage(named: "home_icon")
@@ -33,9 +35,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
             
             // 2rd tab
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
             let quizVC = mainStoryboard.instantiateViewController(withIdentifier:  "QuizViewController2")
-
             let quizItem = UITabBarItem()
             quizItem.title = "Quiz"
             quizVC.tabBarItem = quizItem
