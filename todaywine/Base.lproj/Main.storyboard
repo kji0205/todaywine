@@ -129,6 +129,94 @@
             </objects>
             <point key="canvasLocation" x="2023.1884057971015" y="644.86607142857144"/>
         </scene>
+        <!--Search Result View Controller-->
+        <scene sceneID="rkQ-9p-rVw">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xzS-4R-WtQ" customClass="SearchResultViewController" customModule="todaywine" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2mm-56-lar">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Qac-C5-0Yu">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Search Result" id="fC1-8W-zxR"/>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cliff-lede" translatesAutoresizingMaskIntoConstraints="NO" id="uLc-Hf-S6X">
+                                <rect key="frame" x="10" y="98.000000000000028" width="355" height="353.66666666666674"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cct-JG-FkN">
+                                <rect key="frame" x="10" y="461.66666666666674" width="355" height="306.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X92-ve-IMM" userLabel="name">
+                                        <rect key="frame" x="5" y="10" width="345" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2k-zL-cuM" userLabel="region">
+                                        <rect key="frame" x="5" y="103" width="345" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="grapes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iG-Oj-rVd" userLabel="grapes">
+                                        <rect key="frame" x="5" y="72" width="345" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZ3-GT-xqm" userLabel="country">
+                                        <rect key="frame" x="5" y="41" width="345" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW5-Mv-ch5" userLabel="description label">
+                                        <rect key="frame" x="5" y="132" width="345" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WX6-0f-RyN" firstAttribute="bottom" secondItem="Cct-JG-FkN" secondAttribute="bottom" constant="10" id="PFY-hj-NMz"/>
+                            <constraint firstItem="WX6-0f-RyN" firstAttribute="trailing" secondItem="Cct-JG-FkN" secondAttribute="trailing" constant="10" id="Rqv-7r-maK"/>
+                            <constraint firstItem="WX6-0f-RyN" firstAttribute="trailing" secondItem="uLc-Hf-S6X" secondAttribute="trailing" constant="10" id="Xpc-yA-6Rq"/>
+                            <constraint firstItem="Qac-C5-0Yu" firstAttribute="top" secondItem="WX6-0f-RyN" secondAttribute="top" id="Y8R-jk-Elg"/>
+                            <constraint firstItem="Cct-JG-FkN" firstAttribute="leading" secondItem="WX6-0f-RyN" secondAttribute="leading" constant="10" id="YVD-fJ-13k"/>
+                            <constraint firstItem="uLc-Hf-S6X" firstAttribute="leading" secondItem="WX6-0f-RyN" secondAttribute="leading" constant="10" id="Zmz-tZ-0Hc"/>
+                            <constraint firstItem="Qac-C5-0Yu" firstAttribute="leading" secondItem="WX6-0f-RyN" secondAttribute="leading" id="dBr-Fd-bTD"/>
+                            <constraint firstItem="WX6-0f-RyN" firstAttribute="bottom" secondItem="uLc-Hf-S6X" secondAttribute="bottom" multiplier="1.7" constant="10" id="lhu-JU-Pwf"/>
+                            <constraint firstItem="Qac-C5-0Yu" firstAttribute="trailing" secondItem="WX6-0f-RyN" secondAttribute="trailing" id="pc1-ZD-ygj"/>
+                            <constraint firstItem="uLc-Hf-S6X" firstAttribute="top" secondItem="Qac-C5-0Yu" secondAttribute="bottom" constant="10" id="x5P-jq-rdW"/>
+                            <constraint firstItem="Cct-JG-FkN" firstAttribute="top" secondItem="uLc-Hf-S6X" secondAttribute="bottom" constant="10" id="yS6-zT-MdB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WX6-0f-RyN"/>
+                    </view>
+                    <connections>
+                        <outlet property="countryLabel" destination="q2k-zL-cuM" id="jmi-7S-fih"/>
+                        <outlet property="descriptionLabel" destination="lW5-Mv-ch5" id="K5S-Cz-1bi"/>
+                        <outlet property="grapesLabel" destination="1iG-Oj-rVd" id="4uD-zk-ecN"/>
+                        <outlet property="nameLabel" destination="X92-ve-IMM" id="U7v-UV-jzD"/>
+                        <outlet property="navigationBar" destination="Qac-C5-0Yu" id="CMp-ZQ-VQd"/>
+                        <outlet property="regionLabel" destination="yZ3-GT-xqm" id="Tr7-xr-kd7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSU-Kd-tew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934" y="644"/>
+        </scene>
         <!--Today Wine View Controller-->
         <scene sceneID="EE2-qg-COE">
             <objects>

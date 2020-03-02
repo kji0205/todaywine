@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class SearchViewController: UIViewControllerBase {
     
     var wines: [Wine] = []
@@ -25,9 +26,11 @@ class SearchViewController: UIViewControllerBase {
         
         let searchVC = UISearchController(searchResultsController: nil)
         searchVC.searchResultsUpdater = self
+        searchVC.obscuresBackgroundDuringPresentation = false
         
         self.navigationItem.searchController = searchVC
         self.navigationItem.hidesSearchBarWhenScrolling = false
+        
         
         searchResultTableView.register(UINib(nibName: "WineCell", bundle: nil), forCellReuseIdentifier: "wineCell")
         
@@ -75,6 +78,28 @@ extension SearchViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        switch indexPath.row {
+//        case 0: self.performSegue(withIdentifier: "photoObjectDetection", sender: nil)
+//        case 1: self.performSegue(withIdentifier: "realTimeObjectDetection", sender: nil)
+//        case 2: self.performSegue(withIdentifier: "facialAnalysis", sender: nil)
+//        default:
+//            return
+//        }
+        
+        guard let vc = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as? SearchResultViewController else { return }
+        
+        vc.wineDataIndex = indexPath.row
+        vc._name = wines[indexPath.row].name
+        vc._region = wines[indexPath.row].region
+        vc._grapes = wines[indexPath.row].grapes
+        vc._country = wines[indexPath.row].country
+        vc._description = wines[indexPath.row].description
+        
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension SearchViewController: UISearchResultsUpdating {
@@ -95,4 +120,5 @@ extension SearchViewController: UISearchResultsUpdating {
             searchResultTableView.reloadData()
         }
     }
+    
 }
