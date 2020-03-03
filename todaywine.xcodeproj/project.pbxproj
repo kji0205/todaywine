@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BF3EF411240D9A0C00036FD1 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */; };
+		BF406452240E8E4C00F20734 /* wineV2.json in Resources */ = {isa = PBXBuildFile; fileRef = BF406451240E8E4C00F20734 /* wineV2.json */; };
+		BF406454240E92C800F20734 /* WineV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF406453240E92C800F20734 /* WineV2.swift */; };
 		BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */; };
 		BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */; };
 		BFDAB38C23FEA4DA009CE055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38B23FEA4DA009CE055 /* ViewController.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		BF406451240E8E4C00F20734 /* wineV2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wineV2.json; sourceTree = "<group>"; };
+		BF406453240E92C800F20734 /* WineV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineV2.swift; sourceTree = "<group>"; };
 		BFDAB38423FEA4DA009CE055 /* todaywine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todaywine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,9 +147,11 @@
 				BFDAB3C92408F1F6009CE055 /* WineCell.swift */,
 				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
 				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
+				BF406453240E92C800F20734 /* WineV2.swift */,
 				BFDAB38D23FEA4DA009CE055 /* Main.storyboard */,
 				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
 				BFDAB3C52408EA3F009CE055 /* wine.json */,
+				BF406451240E8E4C00F20734 /* wineV2.json */,
 				BFDAB3CF240934AF009CE055 /* quiz.json */,
 				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
 				BFDAB39023FEA4DD009CE055 /* Assets.xcassets */,
@@ -283,6 +289,7 @@
 				BFDAB39423FEA4DD009CE055 /* LaunchScreen.storyboard in Resources */,
 				BFDAB39123FEA4DD009CE055 /* Assets.xcassets in Resources */,
 				BFDAB38F23FEA4DA009CE055 /* Main.storyboard in Resources */,
+				BF406452240E8E4C00F20734 /* wineV2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +316,7 @@
 			files = (
 				BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */,
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
+				BF406454240E92C800F20734 /* WineV2.swift in Sources */,
 				BFDAB3CE240932D3009CE055 /* Quiz.swift in Sources */,
 				BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */,
 				BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */,

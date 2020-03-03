@@ -11,9 +11,9 @@ import UIKit
 
 class SearchViewController: UIViewControllerBase {
     
-    var wines: [Wine] = []
+    var wines: [WineV2] = []
     
-    var filteredWineList: [Wine] = []
+    var filteredWineList: [WineV2] = []
     var isFiltered = false
     
     @IBOutlet weak var searchResultTableView: UITableView!
@@ -35,11 +35,11 @@ class SearchViewController: UIViewControllerBase {
         searchResultTableView.register(UINib(nibName: "WineCell", bundle: nil), forCellReuseIdentifier: "wineCell")
         
         let jsonDecoder = JSONDecoder()
-        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
+        guard let wineData : NSDataAsset = NSDataAsset(name: "wineV2") else {
             return
         }
         do {
-            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
+            self.wines = try jsonDecoder.decode([WineV2].self, from: wineData.data)
         } catch {
             print(error.localizedDescription)
         }
@@ -93,10 +93,16 @@ extension SearchViewController: UITableViewDataSource {
         
         vc.wineDataIndex = indexPath.row
         vc._name = wines[indexPath.row].name
-        vc._region = wines[indexPath.row].region
-        vc._grapes = wines[indexPath.row].grapes
+        if let region = wines[indexPath.row].region {
+            vc._region = region
+        }
+        if let grapes = wines[indexPath.row].grapes {
+            vc._grapes = grapes
+        }
         vc._country = wines[indexPath.row].country
-        vc._description = wines[indexPath.row].description
+        if let description = wines[indexPath.row].description {
+            vc._description = description
+        }
         
         present(vc, animated: true, completion: nil)
     }
