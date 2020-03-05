@@ -21,11 +21,11 @@ class QuizViewController2: UIViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let infoLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 50))
-        infoLabel.text = "Quiz"
-        infoLabel.font = .boldSystemFont(ofSize: 20)
-        
-        self.view.addSubview(infoLabel)
+//        let infoLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 50))
+//        infoLabel.text = "Quiz"
+//        infoLabel.font = .boldSystemFont(ofSize: 20)
+//        
+//        self.view.addSubview(infoLabel)
         
 
         let jsonDecoder = JSONDecoder()
