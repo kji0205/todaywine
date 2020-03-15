@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        #if TEST
         if #available(iOS 13, *) {
             print("set in SceneDelegate")
         } else {
@@ -56,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window.rootViewController = tabBarController
         }
+        #endif
         
         return true
     }
