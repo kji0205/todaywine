@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E7E232420EC8E00931641 /* HomeViewController.swift */; };
 		BF3EF411240D9A0C00036FD1 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */; };
 		BF406452240E8E4C00F20734 /* wineV2.json in Resources */ = {isa = PBXBuildFile; fileRef = BF406451240E8E4C00F20734 /* wineV2.json */; };
 		BF406454240E92C800F20734 /* WineV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF406453240E92C800F20734 /* WineV2.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF3E7E232420EC8E00931641 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		BF406451240E8E4C00F20734 /* wineV2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wineV2.json; sourceTree = "<group>"; };
 		BF406453240E92C800F20734 /* WineV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineV2.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */,
 				BFDAB3B723FEA54A009CE055 /* MainViewController.swift */,
 				BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */,
+				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
 				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
 				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
@@ -333,6 +336,7 @@
 				BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */,
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
 				BF406454240E92C800F20734 /* WineV2.swift in Sources */,
+				BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */,
 				BFDAB3CE240932D3009CE055 /* Quiz.swift in Sources */,
 				BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */,
 				BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */,
