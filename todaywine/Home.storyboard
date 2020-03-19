@@ -242,9 +242,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableFooterView" contentMode="redraw" id="am6-RK-MVD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="search" id="15b-PE-aET"/>
                     <connections>
+                        <outlet property="searchBar" destination="am6-RK-MVD" id="r5s-8V-YtW"/>
                         <outlet property="searchResultTableView" destination="MYc-zO-mwm" id="wjz-ZL-57M"/>
                     </connections>
                 </viewController>

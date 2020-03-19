@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SearchViewController: UIViewControllerBase {
+class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
     
     var wines: [WineV2] = []
     
@@ -19,6 +19,7 @@ class SearchViewController: UIViewControllerBase {
     let searchVC = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var searchResultTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
@@ -26,7 +27,11 @@ class SearchViewController: UIViewControllerBase {
         
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
+        searchResultTableView.tableHeaderView = searchBar
+        searchResultTableView.keyboardDismissMode = .onDrag
         
+        searchBar.delegate = self
+        searchBar.placeholder = "Input wine name"
         
         searchVC.searchResultsUpdater = self
         searchVC.obscuresBackgroundDuringPresentation = false
@@ -36,7 +41,7 @@ class SearchViewController: UIViewControllerBase {
         self.navigationItem.hidesSearchBarWhenScrolling = false
         
 
-        self.navigationController?.navigationBar.topItem?.titleView = searchVC.searchBar
+//        self.navigationController?.navigationBar.topItem?.titleView = searchVC.searchBar
 //        self.navigationController?.navigationBar.topItem?.titleView = searchBar.
 //        self.navigationController?.navigationBar
         definesPresentationContext = false
@@ -54,10 +59,43 @@ class SearchViewController: UIViewControllerBase {
         }
     }
     
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if let hasText = searchBar.text?.lowercased() {
+            if hasText.isEmpty {
+                isFiltered = false
+            } else {
+                isFiltered = true
+                filteredWineList = wines.filter({ $0.name.lowercased().contains(hasText)})
+            }
+            searchResultTableView.reloadData()
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        if searchVC.isActive{
+//            searchVC.isActive = false
+//        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        searchBar.searchTextField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+//        self.view.endEditing(true)
+//        searchBar.searchTextField.resignFirstResponder()
+    }
+
 }
 
 extension SearchViewController: UITableViewDelegate {
-
+    
 }
 
 extension SearchViewController: UITableViewDataSource {
