@@ -16,7 +16,10 @@ class SearchViewController: UIViewControllerBase {
     var filteredWineList: [WineV2] = []
     var isFiltered = false
     
+    let searchVC = UISearchController(searchResultsController: nil)
+    
     @IBOutlet weak var searchResultTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +27,19 @@ class SearchViewController: UIViewControllerBase {
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
         
-        let searchVC = UISearchController(searchResultsController: nil)
+        
         searchVC.searchResultsUpdater = self
         searchVC.obscuresBackgroundDuringPresentation = false
+        searchVC.hidesNavigationBarDuringPresentation = false
         
         self.navigationItem.searchController = searchVC
         self.navigationItem.hidesSearchBarWhenScrolling = false
         
+
+        self.navigationController?.navigationBar.topItem?.titleView = searchVC.searchBar
+//        self.navigationController?.navigationBar.topItem?.titleView = searchBar.
+//        self.navigationController?.navigationBar
+        definesPresentationContext = false
         
         searchResultTableView.register(UINib(nibName: "WineCell", bundle: nil), forCellReuseIdentifier: "wineCell")
         
@@ -44,6 +53,7 @@ class SearchViewController: UIViewControllerBase {
             print(error.localizedDescription)
         }
     }
+    
 }
 
 extension SearchViewController: UITableViewDelegate {
@@ -89,6 +99,10 @@ extension SearchViewController: UITableViewDataSource {
 //            return
 //        }
         
+        if searchVC.isActive{
+            searchVC.isActive = false
+        }
+        
         guard let vc = self.storyboard?.instantiateViewController(identifier: "SearchResultViewController") as? SearchResultViewController else { return }
         
         vc.wineDataIndex = indexPath.row
@@ -128,3 +142,5 @@ extension SearchViewController: UISearchResultsUpdating {
     }
     
 }
+
+

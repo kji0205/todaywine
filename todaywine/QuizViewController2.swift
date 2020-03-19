@@ -21,12 +21,6 @@ class QuizViewController2: UIViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let infoLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 50))
-//        infoLabel.text = "Quiz"
-//        infoLabel.font = .boldSystemFont(ofSize: 20)
-//        
-//        self.view.addSubview(infoLabel)
-        
 
         let jsonDecoder = JSONDecoder()
         guard let quizData : NSDataAsset = NSDataAsset(name: "quiz") else {
@@ -40,6 +34,7 @@ class QuizViewController2: UIViewControllerBase {
         
         let quizIndex = Int.random(in: 0...quiz.count-1)
         questionText.text = quiz[quizIndex].question
+        questionText.sizeToFit()
         currentAnswer = quiz[quizIndex].answer
         
     }

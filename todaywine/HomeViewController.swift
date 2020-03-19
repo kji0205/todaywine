@@ -45,9 +45,11 @@ class HomeViewController: UIViewController {
         grapesLabel.text = wines[wineIndex].grapes
         countryLabel.text = wines[wineIndex].country
         regionLabel.text = wines[wineIndex].region
-//        descriptionLabel.text = wines[wineIndex].description
-        descriptionLabel.text = "test - Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley."
-                
+        descriptionLabel.text = wines[wineIndex].description
+//        descriptionLabel.text = "Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley."
+        
+        descriptionLabel.sizeToFit()
+        
     }
 
     /*
