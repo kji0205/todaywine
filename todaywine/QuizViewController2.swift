@@ -45,6 +45,7 @@ class QuizViewController2: UIViewControllerBase {
         alert.addAction(action)
 
         self.present(alert, animated: true, completion: nil)
+        save()
     }
     
     @IBAction func actionFalse(_ sender: Any) {
@@ -52,6 +53,10 @@ class QuizViewController2: UIViewControllerBase {
         let action = UIAlertAction(title: "확인", style: .default)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+        save()
     }
     
+    func save() {
+        UserDefaults.standard.set(currentAnswer ? true:false, forKey: "quizLog")
+    }
 }

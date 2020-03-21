@@ -173,9 +173,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPB-fe-ALd">
-                                <rect key="frame" x="39" y="111" width="335" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPB-fe-ALd">
+                                <rect key="frame" x="20" y="108" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -215,11 +214,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="RPB-fe-ALd" firstAttribute="top" secondItem="gtj-Fi-138" secondAttribute="top" constant="20" id="1zP-oJ-6aL"/>
                             <constraint firstItem="1Lw-yL-eGV" firstAttribute="centerY" secondItem="m2y-06-e4e" secondAttribute="centerY" id="6L5-h9-hNf"/>
                             <constraint firstItem="1Lw-yL-eGV" firstAttribute="centerX" secondItem="m2y-06-e4e" secondAttribute="centerX" id="8UG-1h-dJM"/>
                             <constraint firstAttribute="trailing" secondItem="1Lw-yL-eGV" secondAttribute="trailing" constant="10" id="LXQ-Dk-1Fg"/>
                             <constraint firstItem="1Lw-yL-eGV" firstAttribute="leading" secondItem="gtj-Fi-138" secondAttribute="leading" constant="10" id="Qvb-Wa-gm3"/>
                             <constraint firstItem="1Lw-yL-eGV" firstAttribute="height" secondItem="gtj-Fi-138" secondAttribute="height" multiplier="0.3" id="TBO-5i-FDJ"/>
+                            <constraint firstItem="RPB-fe-ALd" firstAttribute="leading" secondItem="gtj-Fi-138" secondAttribute="leading" constant="20" id="hJM-KK-7Nv"/>
+                            <constraint firstItem="gtj-Fi-138" firstAttribute="trailing" secondItem="RPB-fe-ALd" secondAttribute="trailing" constant="20" id="zzK-z1-Umb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gtj-Fi-138"/>
                     </view>
