@@ -10,15 +10,31 @@ import UIKit
 
 class MypageViewController: UIViewControllerBase {
     
+    var store = DataStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let infoLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 50))
-        infoLabel.text = "Mypage"
-        infoLabel.font = .boldSystemFont(ofSize: 20)
-        
-        self.view.addSubview(infoLabel)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadQuizLog()
     }
     
     
+    func loadQuizLog() {
+            
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
+            print(data)
+            
+            if let ourData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [QuizLog] {
+                print(ourData)
+                self.store.quizLogs = ourData
+            }
+        } catch  {
+            print(error)
+        }
+        
+    }
 }

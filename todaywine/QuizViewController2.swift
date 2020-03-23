@@ -18,6 +18,15 @@ class QuizViewController2: UIViewControllerBase {
     var quiz : [Quiz] = []
     var currentAnswer: Bool = false
     
+    var store = DataStore.sharedInstance
+    
+    private let fileURL: URL = {
+        let documentDirectoryURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectoryURL = documentDirectoryURLs.first!
+        return documentDirectoryURL.appendingPathComponent("quizlog.archive")
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +46,7 @@ class QuizViewController2: UIViewControllerBase {
         questionText.sizeToFit()
         currentAnswer = quiz[quizIndex].answer
         
+        
     }
     
     @IBAction func actionTrue(_ sender: Any) {
@@ -45,7 +55,9 @@ class QuizViewController2: UIViewControllerBase {
         alert.addAction(action)
 
         self.present(alert, animated: true, completion: nil)
+        
         save()
+        
     }
     
     @IBAction func actionFalse(_ sender: Any) {
@@ -53,10 +65,37 @@ class QuizViewController2: UIViewControllerBase {
         let action = UIAlertAction(title: "확인", style: .default)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
+        
         save()
     }
     
+    
     func save() {
-        UserDefaults.standard.set(currentAnswer ? true:false, forKey: "quizLog")
+        
+        let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: currentAnswer)
+
+        self.store.quizLogs.append(_quizLog)
+        
+        do {
+            try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
+        } catch  {
+            print(error)
+        }
+        
+    }
+    
+    
+    func loadQuizLog() {
+        
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
+            
+            if let ourData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [QuizLog] {
+                self.store.quizLogs = ourData
+            }
+        } catch  {
+            print(error)
+        }
+        
     }
 }

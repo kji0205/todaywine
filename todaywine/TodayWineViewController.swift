@@ -20,6 +20,7 @@ class TodayWineViewController: UIViewControllerBase {
     
     var wines : [WineV2] = []
     
+    // MARK: - View Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

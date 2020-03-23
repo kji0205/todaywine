@@ -152,7 +152,7 @@
         <!--MY-->
         <scene sceneID="0XQ-rK-apd">
             <objects>
-                <viewController title="MY" id="fnA-KL-Ssh" sceneMemberID="viewController">
+                <viewController title="MY" id="fnA-KL-Ssh" customClass="MypageViewController" customModule="todaywine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HwT-Sc-sb6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
