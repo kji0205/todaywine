@@ -56,7 +56,7 @@ class QuizViewController2: UIViewControllerBase {
 
         self.present(alert, animated: true, completion: nil)
         
-        save()
+        save(true, currentAnswer)
         
     }
     
@@ -66,13 +66,13 @@ class QuizViewController2: UIViewControllerBase {
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
         
-        save()
+        save(false, currentAnswer)
     }
     
     
-    func save() {
+    func save(_ result: Bool, _ userAnswer: Bool) {
         
-        let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: currentAnswer)
+        let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: (result==userAnswer))
 
         self.store.quizLogs.append(_quizLog)
         
