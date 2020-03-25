@@ -12,15 +12,23 @@ import Foundation
 struct Wine: Codable {
     
     let _id: Int
-    let name: String
-    let year: String
-    let grapes: String
-    let country: String
-    let region: String
-    let description: String
-    let picture: String
+    let name: String        // 이름
+    let nameEng: String     // 영문이름
+    let country: String     // 국가
+    let region: String?      // 지역
+    let wineryName: String  // 와이너리
+    let vintage: String     // year
+    let type: String?    // red, white, ...
+    let grapes: String?  // 품종
+    let alcohol: String? // 알콜
+    let volume: String?  // 750ml
+    let retailPrice: Int    // 소비자가
+    let description: String?     // 와인설명
+    let image: String?     // 이미지
+    let shopName: String   // 매장명
+    let shopAddress: String    // 매장주소
     
     var info: String {
-        return self.name + "(\(self.grapes))" + "(\(self.country))"  + "(\(self.year))"
+        return self.name + "(\(self.country))"  + "(\(self.vintage))"
     }
 }

@@ -11,9 +11,9 @@ import UIKit
 
 class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
     
-    var wines: [WineV2] = []
+    var wines: [Wine] = []
     
-    var filteredWineList: [WineV2] = []
+    var filteredWineList: [Wine] = []
     var isFiltered = false
     
     let searchVC = UISearchController(searchResultsController: nil)
@@ -49,11 +49,11 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
         searchResultTableView.register(UINib(nibName: "WineCell", bundle: nil), forCellReuseIdentifier: "wineCell")
         
         let jsonDecoder = JSONDecoder()
-        guard let wineData : NSDataAsset = NSDataAsset(name: "wineV2") else {
+        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
             return
         }
         do {
-            self.wines = try jsonDecoder.decode([WineV2].self, from: wineData.data)
+            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
         } catch {
             print(error.localizedDescription)
         }

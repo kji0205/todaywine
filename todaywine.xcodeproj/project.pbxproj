@@ -9,14 +9,10 @@
 /* Begin PBXBuildFile section */
 		BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E7E232420EC8E00931641 /* HomeViewController.swift */; };
 		BF3EF411240D9A0C00036FD1 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */; };
-		BF406452240E8E4C00F20734 /* wineV2.json in Resources */ = {isa = PBXBuildFile; fileRef = BF406451240E8E4C00F20734 /* wineV2.json */; };
 		BF406454240E92C800F20734 /* WineV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF406453240E92C800F20734 /* WineV2.swift */; };
 		BF4380B3242639AC000C0B43 /* QuizLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4380B2242639AC000C0B43 /* QuizLog.swift */; };
 		BF4380B724290365000C0B43 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4380B624290365000C0B43 /* DataStore.swift */; };
 		BF7CAEBE241E3C8D0047CD70 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */; };
-		BF841591241489A5006B6A27 /* Magistrate JPG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF841590241489A5006B6A27 /* Magistrate JPG.jpg */; };
-		BF84159324148B46006B6A27 /* Magistrate JPG.png in Resources */ = {isa = PBXBuildFile; fileRef = BF84159224148B46006B6A27 /* Magistrate JPG.png */; };
-		BF84159524148BE3006B6A27 /* Magistrate JPG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF84159424148BE3006B6A27 /* Magistrate JPG@2x.png */; };
 		BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */; };
 		BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */; };
 		BFDAB38C23FEA4DA009CE055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38B23FEA4DA009CE055 /* ViewController.swift */; };
@@ -61,14 +57,10 @@
 /* Begin PBXFileReference section */
 		BF3E7E232420EC8E00931641 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
-		BF406451240E8E4C00F20734 /* wineV2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wineV2.json; sourceTree = "<group>"; };
 		BF406453240E92C800F20734 /* WineV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineV2.swift; sourceTree = "<group>"; };
 		BF4380B2242639AC000C0B43 /* QuizLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLog.swift; sourceTree = "<group>"; };
 		BF4380B624290365000C0B43 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		BF841590241489A5006B6A27 /* Magistrate JPG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Magistrate JPG.jpg"; path = "../../../Downloads/Magistrate JPG.jpg"; sourceTree = "<group>"; };
-		BF84159224148B46006B6A27 /* Magistrate JPG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Magistrate JPG.png"; path = "../../../Downloads/Magistrate JPG.png"; sourceTree = "<group>"; };
-		BF84159424148BE3006B6A27 /* Magistrate JPG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Magistrate JPG@2x.png"; path = "../../../Downloads/Magistrate JPG@2x.png"; sourceTree = "<group>"; };
 		BFDAB38423FEA4DA009CE055 /* todaywine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todaywine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,16 +160,12 @@
 				BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */,
 				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
 				BFDAB3C52408EA3F009CE055 /* wine.json */,
-				BF406451240E8E4C00F20734 /* wineV2.json */,
 				BFDAB3CF240934AF009CE055 /* quiz.json */,
 				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
 				BF4380B2242639AC000C0B43 /* QuizLog.swift */,
 				BFDAB39023FEA4DD009CE055 /* Assets.xcassets */,
 				BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */,
 				BFDAB39523FEA4DD009CE055 /* Info.plist */,
-				BF84159224148B46006B6A27 /* Magistrate JPG.png */,
-				BF84159424148BE3006B6A27 /* Magistrate JPG@2x.png */,
-				BF841590241489A5006B6A27 /* Magistrate JPG.jpg */,
 			);
 			path = todaywine;
 			sourceTree = "<group>";
@@ -307,14 +295,10 @@
 				BFDAB3CC2408F1F6009CE055 /* WineCell.xib in Resources */,
 				BF7CAEBE241E3C8D0047CD70 /* Home.storyboard in Resources */,
 				BFDAB3C62408EA3F009CE055 /* wine.json in Resources */,
-				BF84159324148B46006B6A27 /* Magistrate JPG.png in Resources */,
 				BFDAB3D0240934AF009CE055 /* quiz.json in Resources */,
-				BF84159524148BE3006B6A27 /* Magistrate JPG@2x.png in Resources */,
-				BF841591241489A5006B6A27 /* Magistrate JPG.jpg in Resources */,
 				BFDAB39423FEA4DD009CE055 /* LaunchScreen.storyboard in Resources */,
 				BFDAB39123FEA4DD009CE055 /* Assets.xcassets in Resources */,
 				BFDAB38F23FEA4DA009CE055 /* Main.storyboard in Resources */,
-				BF406452240E8E4C00F20734 /* wineV2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

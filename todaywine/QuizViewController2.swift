@@ -71,7 +71,7 @@ class QuizViewController2: UIViewControllerBase {
     
     
     func save(_ result: Bool, _ userAnswer: Bool) {
-        
+  
         let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: (result==userAnswer))
 
         self.store.quizLogs.append(_quizLog)

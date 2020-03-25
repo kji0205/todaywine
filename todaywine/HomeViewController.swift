@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var wines : [WineV2] = []
+    var wines : [Wine] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,11 @@ class HomeViewController: UIViewController {
     // MARK: setWineData
     func setWineData() {
         let jsonDecoder = JSONDecoder()
-        guard let wineData : NSDataAsset = NSDataAsset(name: "wineV2") else {
+        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
             return
         }
         do {
-            self.wines = try jsonDecoder.decode([WineV2].self, from: wineData.data)
+            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
         } catch {
             print(error.localizedDescription)
         }

@@ -24,7 +24,7 @@ class QuizData: Codable {
     var result: Bool
 }
 
-class QuizLog: NSObject, NSCoding, NSSecureCoding {
+class QuizLog: NSObject, NSCoding, NSSecureCoding, Comparable {
     static var supportsSecureCoding: Bool {
         return true
     }
@@ -59,7 +59,9 @@ class QuizLog: NSObject, NSCoding, NSSecureCoding {
     var regdate: Date
     var result: Bool
     
-    
+    static func <(lhs: QuizLog, rhs: QuizLog) -> Bool {
+        return lhs.regdate > rhs.regdate
+    }
 }
 
 class QuizLogDAO {
