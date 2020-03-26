@@ -77,25 +77,13 @@ class QuizViewController2: UIViewControllerBase {
         self.store.quizLogs.append(_quizLog)
         
         do {
-            try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
-        } catch  {
-            print(error)
-        }
-        
-    }
-    
-    
-    func loadQuizLog() {
-        
-        do {
-            let data = try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
+            let _quizLogData = try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
+            UserDefaults.standard.set(_quizLogData, forKey: "QuizLog")
             
-            if let ourData = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [QuizLog] {
-                self.store.quizLogs = ourData
-            }
         } catch  {
             print(error)
         }
         
     }
+    
 }

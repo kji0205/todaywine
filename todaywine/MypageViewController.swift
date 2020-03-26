@@ -34,7 +34,7 @@ class MypageViewController: UIViewControllerBase {
         var _result: String
         var _answer: String
         
-        for item in self.store.quizLogs.sorted() {
+        for item in store.quizLogs.sorted() {
             _answer = item.result ? "정답" + "\n" : "오답" + "\n"
             _result = item.regdate.description + " " + _answer
             quizHistoryLabel.text?.append(contentsOf: _result)

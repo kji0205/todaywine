@@ -11,5 +11,20 @@ import Foundation
 class DataStore {
     static let sharedInstance = DataStore()
     private init() {}
-    var quizLogs: [QuizLog] = []
+    var quizLogs: [QuizLog] = loadQuizLog() 
+    
+    private static func loadQuizLog() -> [QuizLog] {
+        
+        do {
+            if let data = UserDefaults.standard.data(forKey: "QuizLog"),
+                let custom = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [QuizLog] {
+                
+                return custom
+            }
+        } catch {
+            print(error)
+        }
+        
+        return []
+    }
 }

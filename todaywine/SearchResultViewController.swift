@@ -26,7 +26,7 @@ class SearchResultViewController: UIViewControllerBase {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         nameLabel.text = _name
@@ -46,9 +46,9 @@ class SearchResultViewController: UIViewControllerBase {
         // Pass the selected object to the new view controller.
     }
     */
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(wineDataIndex)
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        print(wineDataIndex)
+//    }
     
     
 }

@@ -38,7 +38,7 @@ class QuizLog: NSObject, NSCoding, NSSecureCoding, Comparable {
     required convenience init?(coder: NSCoder) {
         let idx = coder.decodeInteger(forKey: "idx")
         let regdate = coder.decodeObject(forKey: "regdate") as! Date
-        let result = coder.decodeBool(forKey: "result") as! Bool
+        let result = coder.decodeBool(forKey: "result")
         
         self.init(idx: idx, regdate: regdate, result: result)
     }
