@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>KAKAO_APP_KEY</key>
+	<string>b0d1b15bc1bda7e69386ad84f0ae365a</string>
 	<key>NSFileProviderDomainUsageDescription</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>

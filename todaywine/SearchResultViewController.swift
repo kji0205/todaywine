@@ -16,6 +16,7 @@ class SearchResultViewController: UIViewControllerBase {
     @IBOutlet weak var grapesLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var kakaoMapView: UIView!
     
     var wineDataIndex: Int = 0
     var _name:String = ""
@@ -34,8 +35,19 @@ class SearchResultViewController: UIViewControllerBase {
         grapesLabel.text = _grapes
         countryLabel.text = _country
         descriptionLabel.text = _description
+        
+        kakaoMapView.addSubview(makeUIView())
+        
+        
     }
-    
+
+    func makeUIView() -> MTMapView {
+        let view = MTMapView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+      view.currentLocationTrackingMode = .onWithoutHeading
+      view.showCurrentLocationMarker = true
+      
+      return view
+    }
 
     /*
     // MARK: - Navigation

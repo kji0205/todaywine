@@ -355,6 +355,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T13-VN-vKi">
+                                        <rect key="frame" x="5" y="213" width="381" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -379,6 +384,7 @@
                         <outlet property="countryLabel" destination="lMb-q0-1d4" id="u9p-J3-zW0"/>
                         <outlet property="descriptionLabel" destination="zPB-ky-9rG" id="WRk-7h-SrS"/>
                         <outlet property="grapesLabel" destination="hk8-8g-BCs" id="aol-KF-Pan"/>
+                        <outlet property="kakaoMapView" destination="T13-VN-vKi" id="Ezg-vL-tBO"/>
                         <outlet property="nameLabel" destination="J1S-Rv-eqC" id="fkR-YD-0PB"/>
                         <outlet property="navigationBar" destination="FbZ-rZ-Gvs" id="tU1-L8-Wkj"/>
                         <outlet property="regionLabel" destination="oIx-Gw-02e" id="PLQ-eP-Egf"/>
@@ -386,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSY-2Q-Wg5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2067" y="1574"/>
+            <point key="canvasLocation" x="2066.666666666667" y="1573.6607142857142"/>
         </scene>
     </scenes>
     <resources>
