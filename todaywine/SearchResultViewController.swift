@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class SearchResultViewController: UIViewControllerBase {
 
@@ -16,7 +17,7 @@ class SearchResultViewController: UIViewControllerBase {
     @IBOutlet weak var grapesLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var kakaoMapView: UIView!
+    
     
     var wineDataIndex: Int = 0
     var _name:String = ""
@@ -24,6 +25,10 @@ class SearchResultViewController: UIViewControllerBase {
     var _grapes:String = ""
     var _country:String = ""
     var _description: String = ""
+    
+    // TODO
+    var _latitude: CLLocationDegrees = 37.3794212
+    var _longitude: CLLocationDegrees = 127.1120506
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,17 +41,11 @@ class SearchResultViewController: UIViewControllerBase {
         countryLabel.text = _country
         descriptionLabel.text = _description
         
-        kakaoMapView.addSubview(makeUIView())
-        
-        
     }
 
-    func makeUIView() -> MTMapView {
-        let view = MTMapView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-      view.currentLocationTrackingMode = .onWithoutHeading
-      view.showCurrentLocationMarker = true
-      
-      return view
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        let location = CLLocation.init(latitude: _latitude, longitude: _longitude)
+        performSegue(withIdentifier: "presentToMap", sender: location)
     }
 
     /*
@@ -58,9 +57,16 @@ class SearchResultViewController: UIViewControllerBase {
         // Pass the selected object to the new view controller.
     }
     */
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        print(wineDataIndex)
-//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let mapViewController = segue.destination as? MapViewController,
+        let location = sender as? CLLocation else { return }
+        
+        // 위도 경도 전달
+        mapViewController.shopAddressLatitude = location.coordinate.latitude
+        mapViewController.shopAddressLongitude = location.coordinate.longitude
+    }
     
     
 }

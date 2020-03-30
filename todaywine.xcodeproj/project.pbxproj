@@ -43,6 +43,7 @@
 		BF39D531242FBF040041CA74 /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF39D516242FBF030041CA74 /* map_pinup_custom@3x.png */; };
 		BF39D532242FBF040041CA74 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = BF39D517242FBF040041CA74 /* map_pin.png */; };
 		BF39D534242FBF260041CA74 /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = BF39D533242FBF260041CA74 /* Headers */; };
+		BF39D5372431A4D80041CA74 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D5362431A4D80041CA74 /* MapViewController.swift */; };
 		BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E7E232420EC8E00931641 /* HomeViewController.swift */; };
 		BF3EF411240D9A0C00036FD1 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */; };
 		BF406454240E92C800F20734 /* WineV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF406453240E92C800F20734 /* WineV2.swift */; };
@@ -141,6 +142,7 @@
 		BF39D516242FBF030041CA74 /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		BF39D517242FBF040041CA74 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
 		BF39D533242FBF260041CA74 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = DaumMap.framework/Headers; sourceTree = "<group>"; };
+		BF39D5362431A4D80041CA74 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF3E7E232420EC8E00931641 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		BF406453240E92C800F20734 /* WineV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineV2.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				BF4380B624290365000C0B43 /* DataStore.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
 				BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */,
+				BF39D5362431A4D80041CA74 /* MapViewController.swift */,
 				BFDAB3C92408F1F6009CE055 /* WineCell.swift */,
 				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
 				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
@@ -502,6 +505,7 @@
 				BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */,
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
 				BF406454240E92C800F20734 /* WineV2.swift in Sources */,
+				BF39D5372431A4D80041CA74 /* MapViewController.swift in Sources */,
 				BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */,
 				BFDAB3CE240932D3009CE055 /* Quiz.swift in Sources */,
 				BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */,
