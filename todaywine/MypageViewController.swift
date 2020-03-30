@@ -24,9 +24,10 @@ class MypageViewController: UIViewControllerBase {
     
     override func viewWillAppear(_ animated: Bool) {
         loadQuizLog()
+        loadSeachLog()
     }
     
-    
+    // MARK:- load Log
     func loadQuizLog() {
         
         quizHistoryLabel.text = ""
@@ -39,6 +40,21 @@ class MypageViewController: UIViewControllerBase {
             _result = item.regdate.description + " " + _answer
             quizHistoryLabel.text?.append(contentsOf: _result)
         }
+    }
+    
+    func loadSeachLog() {
         
+        searchHistoryLabel.text = ""
+        
+        var _result: String
+        var _answer: String
+        var _searchKeyword: String
+        
+        for item in store.searchLogs.sorted() {
+            _searchKeyword = item.searchKeyword
+            _answer = item.result ? "(결과있음)" + "\n" : "(결과없음)" + "\n"
+            _result = item.regdate.description + " " + _searchKeyword + " " + _answer
+            searchHistoryLabel.text?.append(contentsOf: _result)
+        }
     }
 }

@@ -44,6 +44,7 @@
 		BF39D532242FBF040041CA74 /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = BF39D517242FBF040041CA74 /* map_pin.png */; };
 		BF39D534242FBF260041CA74 /* Headers in Resources */ = {isa = PBXBuildFile; fileRef = BF39D533242FBF260041CA74 /* Headers */; };
 		BF39D5372431A4D80041CA74 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D5362431A4D80041CA74 /* MapViewController.swift */; };
+		BF39D539243232090041CA74 /* SearchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D538243232090041CA74 /* SearchLog.swift */; };
 		BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E7E232420EC8E00931641 /* HomeViewController.swift */; };
 		BF3EF411240D9A0C00036FD1 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */; };
 		BF406454240E92C800F20734 /* WineV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF406453240E92C800F20734 /* WineV2.swift */; };
@@ -143,6 +144,7 @@
 		BF39D517242FBF040041CA74 /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin.png; sourceTree = "<group>"; };
 		BF39D533242FBF260041CA74 /* Headers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Headers; path = DaumMap.framework/Headers; sourceTree = "<group>"; };
 		BF39D5362431A4D80041CA74 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BF39D538243232090041CA74 /* SearchLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLog.swift; sourceTree = "<group>"; };
 		BF3E7E232420EC8E00931641 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		BF406453240E92C800F20734 /* WineV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineV2.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				BFDAB3CF240934AF009CE055 /* quiz.json */,
 				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
 				BF4380B2242639AC000C0B43 /* QuizLog.swift */,
+				BF39D538243232090041CA74 /* SearchLog.swift */,
 				BFDAB39023FEA4DD009CE055 /* Assets.xcassets */,
 				BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */,
 				BFDAB39523FEA4DD009CE055 /* Info.plist */,
@@ -518,6 +521,7 @@
 				BF4380B724290365000C0B43 /* DataStore.swift in Sources */,
 				BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */,
 				BF4380B3242639AC000C0B43 /* QuizLog.swift in Sources */,
+				BF39D539243232090041CA74 /* SearchLog.swift in Sources */,
 				BFDAB3C02402BE10009CE055 /* QuizViewController2.swift in Sources */,
 				BFDAB3D224097FE5009CE055 /* TodayWineViewController.swift in Sources */,
 				BFDAB3D4240B9D5C009CE055 /* RecommendWineViewController.swift in Sources */,

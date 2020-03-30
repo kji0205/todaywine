@@ -22,6 +22,17 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     
+    // MARK:- Search Log
+    var search : [SearchLog] = []
+    var store = DataStore.sharedInstance
+    
+    private let fileURL: URL = {
+        let documentDirectoryURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectoryURL = documentDirectoryURLs.first!
+        return documentDirectoryURL.appendingPathComponent("searchlog.archive")
+    }()
+    
+    // MARK:- viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,10 +51,6 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
         self.navigationItem.searchController = searchVC
         self.navigationItem.hidesSearchBarWhenScrolling = false
         
-
-//        self.navigationController?.navigationBar.topItem?.titleView = searchVC.searchBar
-//        self.navigationController?.navigationBar.topItem?.titleView = searchBar.
-//        self.navigationController?.navigationBar
         definesPresentationContext = false
         
         searchResultTableView.register(UINib(nibName: "WineCell", bundle: nil), forCellReuseIdentifier: "wineCell")
@@ -72,6 +79,7 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
             } else {
                 isFiltered = true
                 filteredWineList = wines.filter({ $0.name.lowercased().contains(hasText)})
+                
             }
             searchResultTableView.reloadData()
         }
@@ -92,6 +100,22 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
 //        searchBar.searchTextField.resignFirstResponder()
     }
 
+    // MARK:- save
+    func save(_ result: Bool, _ searchKeyword: String) {
+
+        let _searchLog = SearchLog.init(searchKeyword: searchKeyword, regdate: Date(), result: result)
+
+        self.store.searchLogs.append(_searchLog)
+
+        do {
+            let _searchLogData = try NSKeyedArchiver.archivedData(withRootObject: self.store.searchLogs, requiringSecureCoding: false)
+            UserDefaults.standard.set(_searchLogData, forKey: "SearchLog")
+          
+        } catch  {
+            print(error)
+        }
+
+    }
 }
 
 extension SearchViewController: UITableViewDelegate {
@@ -129,13 +153,6 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        switch indexPath.row {
-//        case 0: self.performSegue(withIdentifier: "photoObjectDetection", sender: nil)
-//        case 1: self.performSegue(withIdentifier: "realTimeObjectDetection", sender: nil)
-//        case 2: self.performSegue(withIdentifier: "facialAnalysis", sender: nil)
-//        default:
-//            return
-//        }
         
         if searchVC.isActive{
             searchVC.isActive = false
@@ -156,6 +173,8 @@ extension SearchViewController: UITableViewDataSource {
             vc._description = description
         }
         
+        save(true, wines[indexPath.row].name)
+        
         present(vc, animated: true, completion: nil)
     }
 }
@@ -166,14 +185,13 @@ extension SearchViewController: UISearchResultsUpdating {
         if let hasText = searchController.searchBar.text?.lowercased() {
             if hasText.isEmpty {
                 isFiltered = false
+                save(false, hasText)
             } else {
                 isFiltered = true
                 
-//                filteredWineList = wines.filter({ (element) -> Bool in
-//                    return element.name.contains(hasText)
-//                })
-                
                 filteredWineList = wines.filter({ $0.name.lowercased().contains(hasText)})
+                
+                save(filteredWineList.count > 0, hasText)
             }
             searchResultTableView.reloadData()
         }
