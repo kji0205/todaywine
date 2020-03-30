@@ -85,6 +85,20 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let hasText = searchBar.text?.lowercased() {
+            if hasText.isEmpty {
+                isFiltered = false
+            } else {
+                isFiltered = true
+                filteredWineList = wines.filter({ $0.name.lowercased().contains(hasText)})
+                
+                save(filteredWineList.count > 1, hasText)
+            }
+            searchResultTableView.reloadData()
+        }
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 //        if searchVC.isActive{
 //            searchVC.isActive = false
