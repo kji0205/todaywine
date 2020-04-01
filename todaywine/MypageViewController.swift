@@ -14,12 +14,15 @@ class MypageViewController: UIViewControllerBase {
     @IBOutlet weak var searchHistoryLabel: UILabel!
     
     var store = DataStore.sharedInstance
+    let formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         quizHistoryLabel.text = ""
         searchHistoryLabel.text = ""
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +40,7 @@ class MypageViewController: UIViewControllerBase {
         
         for item in store.quizLogs.sorted() {
             _answer = item.result ? "정답" + "\n" : "오답" + "\n"
-            _result = item.regdate.description + " " + _answer
+            _result = formatter.string(from: item.regdate) + " " + _answer
             quizHistoryLabel.text?.append(contentsOf: _result)
         }
     }
@@ -53,7 +56,7 @@ class MypageViewController: UIViewControllerBase {
         for item in store.searchLogs.sorted() {
             _searchKeyword = item.searchKeyword
             _answer = item.result ? "(결과있음)" + "\n" : "(결과없음)" + "\n"
-            _result = item.regdate.description + " " + _searchKeyword + " " + _answer
+            _result = formatter.string(from: item.regdate) + " " + _searchKeyword + " " + _answer
             searchHistoryLabel.text?.append(contentsOf: _result)
         }
     }
