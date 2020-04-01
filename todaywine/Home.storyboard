@@ -321,17 +321,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="FbZ-rZ-Gvs">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Search Result" id="8BW-Ih-WHO"/>
-                                </items>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cliff-lede" translatesAutoresizingMaskIntoConstraints="NO" id="mgZ-2O-oTJ">
-                                <rect key="frame" x="10" y="98" width="394" height="403"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0r-ky-h3u">
-                                <rect key="frame" x="10" y="511" width="394" height="341"/>
+                                <rect key="frame" x="10" y="600" width="394" height="252"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1S-Rv-eqC" userLabel="name">
                                         <rect key="frame" x="8" y="15" width="378" height="24"/>
@@ -364,7 +355,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-TS-YTA">
-                                        <rect key="frame" x="8" y="192" width="378" height="119"/>
+                                        <rect key="frame" x="8" y="192" width="378" height="30"/>
                                         <state key="normal" title="매장위치보기"/>
                                         <connections>
                                             <action selector="buttonPressed:" destination="CWf-tu-LBu" eventType="touchUpInside" id="zvb-JT-qdr"/>
@@ -402,20 +393,19 @@
                                     <constraint firstItem="J1S-Rv-eqC" firstAttribute="top" secondItem="T0r-ky-h3u" secondAttribute="top" constant="15" id="vhk-aW-NTM"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cliff-lede" translatesAutoresizingMaskIntoConstraints="NO" id="mgZ-2O-oTJ">
+                                <rect key="frame" x="10" y="54" width="394" height="545"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="soc-ya-Lqv" firstAttribute="trailing" secondItem="mgZ-2O-oTJ" secondAttribute="trailing" constant="10" id="0Fb-aC-Jlc"/>
                             <constraint firstItem="soc-ya-Lqv" firstAttribute="bottom" secondItem="T0r-ky-h3u" secondAttribute="bottom" constant="10" id="4HZ-4y-YMU"/>
-                            <constraint firstItem="FbZ-rZ-Gvs" firstAttribute="top" secondItem="soc-ya-Lqv" secondAttribute="top" id="96i-kf-ak1"/>
                             <constraint firstItem="T0r-ky-h3u" firstAttribute="leading" secondItem="soc-ya-Lqv" secondAttribute="leading" constant="10" id="DGA-b8-pz2"/>
-                            <constraint firstItem="mgZ-2O-oTJ" firstAttribute="top" secondItem="FbZ-rZ-Gvs" secondAttribute="bottom" constant="10" id="GKE-Wb-rD6"/>
-                            <constraint firstItem="T0r-ky-h3u" firstAttribute="top" secondItem="mgZ-2O-oTJ" secondAttribute="bottom" constant="10" id="PhR-4L-R6k"/>
-                            <constraint firstItem="FbZ-rZ-Gvs" firstAttribute="trailing" secondItem="soc-ya-Lqv" secondAttribute="trailing" id="QoZ-2J-r4V"/>
+                            <constraint firstItem="mgZ-2O-oTJ" firstAttribute="top" secondItem="soc-ya-Lqv" secondAttribute="top" constant="10" id="Gxo-AY-YjP"/>
                             <constraint firstItem="soc-ya-Lqv" firstAttribute="trailing" secondItem="T0r-ky-h3u" secondAttribute="trailing" constant="10" id="SRS-Wd-qAa"/>
-                            <constraint firstItem="FbZ-rZ-Gvs" firstAttribute="leading" secondItem="soc-ya-Lqv" secondAttribute="leading" id="gLB-pM-QHC"/>
-                            <constraint firstItem="mgZ-2O-oTJ" firstAttribute="leading" secondItem="soc-ya-Lqv" secondAttribute="leading" constant="10" id="hry-Tl-3SD"/>
-                            <constraint firstItem="soc-ya-Lqv" firstAttribute="bottom" secondItem="mgZ-2O-oTJ" secondAttribute="bottom" multiplier="1.7" constant="10" id="qNC-nM-vg9"/>
+                            <constraint firstItem="mgZ-2O-oTJ" firstAttribute="leading" secondItem="soc-ya-Lqv" secondAttribute="leading" constant="10" id="Xqb-6B-qRo"/>
+                            <constraint firstItem="soc-ya-Lqv" firstAttribute="trailing" secondItem="mgZ-2O-oTJ" secondAttribute="trailing" constant="10" id="oaH-UP-eGU"/>
+                            <constraint firstItem="T0r-ky-h3u" firstAttribute="top" secondItem="mgZ-2O-oTJ" secondAttribute="bottom" constant="1" id="wfN-nJ-8na"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soc-ya-Lqv"/>
                     </view>
@@ -424,7 +414,6 @@
                         <outlet property="descriptionLabel" destination="zPB-ky-9rG" id="WRk-7h-SrS"/>
                         <outlet property="grapesLabel" destination="hk8-8g-BCs" id="aol-KF-Pan"/>
                         <outlet property="nameLabel" destination="J1S-Rv-eqC" id="fkR-YD-0PB"/>
-                        <outlet property="navigationBar" destination="FbZ-rZ-Gvs" id="tU1-L8-Wkj"/>
                         <outlet property="regionLabel" destination="oIx-Gw-02e" id="PLQ-eP-Egf"/>
                         <segue destination="brT-Ej-N56" kind="show" identifier="presentToMap" id="drC-MX-y3N"/>
                     </connections>

@@ -189,7 +189,7 @@ extension SearchViewController: UITableViewDataSource {
         
         save(true, wines[indexPath.row].name)
         
-        present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
