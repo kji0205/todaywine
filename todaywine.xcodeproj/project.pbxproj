@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1ED4B62437819700DFAC02 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1ED4B52437819700DFAC02 /* Common.swift */; };
 		BF39D4E3242F573A0041CA74 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E2242F573A0041CA74 /* OpenGLES.framework */; };
 		BF39D4E5242F57720041CA74 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E4242F57720041CA74 /* CoreLocation.framework */; };
 		BF39D4E7242F577E0041CA74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E6242F577E0041CA74 /* QuartzCore.framework */; };
@@ -106,6 +107,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF1ED4B52437819700DFAC02 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BF39D4E2242F573A0041CA74 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF39D4E4242F57720041CA74 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BF39D4E6242F577E0041CA74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -300,6 +302,7 @@
 				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
 				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
 				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
+				BF1ED4B52437819700DFAC02 /* Common.swift */,
 				BF4380B624290365000C0B43 /* DataStore.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
 				BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */,
@@ -509,6 +512,7 @@
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
 				BF406454240E92C800F20734 /* WineV2.swift in Sources */,
 				BF39D5372431A4D80041CA74 /* MapViewController.swift in Sources */,
+				BF1ED4B62437819700DFAC02 /* Common.swift in Sources */,
 				BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */,
 				BFDAB3CE240932D3009CE055 /* Quiz.swift in Sources */,
 				BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */,

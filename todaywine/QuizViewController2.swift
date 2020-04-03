@@ -30,23 +30,7 @@ class QuizViewController2: UIViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        let jsonDecoder = JSONDecoder()
-        guard let quizData : NSDataAsset = NSDataAsset(name: "quiz") else {
-            return
-        }
-        do {
-            self.quiz = try jsonDecoder.decode([Quiz].self, from: quizData.data)
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        let quizIndex = Int.random(in: 0...quiz.count-1)
-        questionText.text = quiz[quizIndex].question
-        questionText.sizeToFit()
-        currentAnswer = quiz[quizIndex].answer
-        
-        
+        getQuizData()
     }
     
     @IBAction func actionTrue(_ sender: Any) {
@@ -69,7 +53,7 @@ class QuizViewController2: UIViewControllerBase {
         save(false, currentAnswer)
     }
     
-    
+    // MARK: 퀴즈 기록 저장
     func save(_ result: Bool, _ userAnswer: Bool) {
   
         let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: (result==userAnswer))
@@ -83,6 +67,45 @@ class QuizViewController2: UIViewControllerBase {
         } catch  {
             print(error)
         }
+    }
+    
+    // MARK: 퀴즈 정보 로드
+    func getQuizData() {
+        
+        let quizURLString = "https://raw.githubusercontent.com/kji0205/todaywine/master/todaywine/quiz.json"
+        
+        guard let encoded  = quizURLString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let _ = URL(string: quizURLString) else {
+            return
+        }
+
+        guard let hasURL = URL(string: encoded) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: hasURL) { (data, response, error) in
+            
+            guard let data = data else {
+                let alert = UIAlertController.init(title: "쿼즈 정보가 없음", message: nil, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                self.quiz = try decoder.decode([Quiz].self, from: data)
+                print("quiz ==> \(self.quiz)")
+            } catch {
+                print("error ==> \(error)")
+            }
+            
+            DispatchQueue.main.async {
+                let quizIndex = Int.random(in: 0...self.quiz.count-1)
+                self.questionText.text = self.quiz[quizIndex].question
+                self.questionText.sizeToFit()
+                self.currentAnswer = self.quiz[quizIndex].answer
+            }
+        }.resume()
         
     }
     
