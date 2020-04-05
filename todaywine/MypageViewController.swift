@@ -22,7 +22,7 @@ class MypageViewController: UIViewControllerBase {
         quizHistoryLabel.text = ""
         searchHistoryLabel.text = ""
         
-        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.dateFormat = " yyyy년 MM월 dd일 HH시 mm분 "
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,10 +39,11 @@ class MypageViewController: UIViewControllerBase {
         var _answer: String
         
         for item in store.quizLogs.sorted() {
-            _answer = item.result ? "정답" + "\n" : "오답" + "\n"
+            _answer = item.result ? "[정답]" + "\n" : "[오답]" + "\n"
             _result = formatter.string(from: item.regdate) + " " + _answer
             quizHistoryLabel.text?.append(contentsOf: _result)
         }
+        quizHistoryLabel.sizeToFit()
     }
     
     func loadSeachLog() {
@@ -56,8 +57,9 @@ class MypageViewController: UIViewControllerBase {
         for item in store.searchLogs.sorted() {
             _searchKeyword = item.searchKeyword
             _answer = item.result ? "(결과있음)" + "\n" : "(결과없음)" + "\n"
-            _result = formatter.string(from: item.regdate) + " " + _searchKeyword + " " + _answer
+            _result = formatter.string(from: item.regdate) + " \"" + _searchKeyword + "\" " + _answer
             searchHistoryLabel.text?.append(contentsOf: _result)
         }
+        searchHistoryLabel.sizeToFit()
     }
 }
