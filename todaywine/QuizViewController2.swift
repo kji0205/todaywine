@@ -72,15 +72,18 @@ class QuizViewController2: UIViewControllerBase {
     // MARK: 퀴즈 정보 로드
     func getQuizData() {
         
-        let quizURLString = "https://raw.githubusercontent.com/kji0205/todaywine/master/todaywine/quiz.json"
+//        let quizURLString = "https://raw.githubusercontent.com/kji0205/todaywine/master/todaywine/quiz.json"
+//
+//
+//        guard let encoded  = quizURLString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let _ = URL(string: quizURLString) else {
+//            return
+//        }
+//
+//        guard let hasURL = URL(string: encoded) else {
+//            return
+//        }
         
-        guard let encoded  = quizURLString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let _ = URL(string: quizURLString) else {
-            return
-        }
-
-        guard let hasURL = URL(string: encoded) else {
-            return
-        }
+        let hasURL = URL(string:  "\(API_URL_QUIZ)")!
         
         URLSession.shared.dataTask(with: hasURL) { (data, response, error) in
             

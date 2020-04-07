@@ -10,10 +10,11 @@ import Foundation
 
 struct Quiz: Codable {
 
-    let _id: Int
+    let id: Int
     let grade: String
     let question: String
     let answer: Bool
     let description: String
-    
+    let created_at: String
+    let updated_at: String
 }

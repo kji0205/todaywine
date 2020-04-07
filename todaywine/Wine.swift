@@ -11,7 +11,7 @@ import Foundation
 
 struct Wine: Codable {
     
-    let _id: Int
+    let id: Int
     let name: String        // 이름
     let nameEng: String     // 영문이름
     let country: String     // 국가
