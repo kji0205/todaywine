@@ -27,8 +27,8 @@ struct Wine: Codable {
     let image: String?     // 이미지
     let shopName: String   // 매장명
     let shopAddress: String    // 매장주소
-//    let shopAddressLatitude: Float     // 위도
-//    let shopAddressLongitude: Float    // 경도
+    //    let shopAddressLatitude: Float     // 위도
+    //    let shopAddressLongitude: Float    // 경도
     
     var info: String {
         return self.name + "(\(self.country))"  + "(\(self.vintage))"

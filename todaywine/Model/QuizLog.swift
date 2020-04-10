@@ -77,9 +77,9 @@ class QuizLogDAO {
         let itemsArray = quizlog as NSArray
         print("Saving items to \(fileURL)")
         
-//        if !itemsArray.write(to: fileURL, atomically: true) {
-//            print("Could not save ")
-//        }
+        //        if !itemsArray.write(to: fileURL, atomically: true) {
+        //            print("Could not save ")
+        //        }
         
         do {
             try itemsArray.write(to: fileURL, atomically: true)
@@ -107,12 +107,12 @@ class QuizLogDAO {
         
         
         
-//        do {
-//            try NSArray(contentsOf: fileURL) as? [QuizLog]
-////            print(itemsArray)
-//        } catch {
-//            print(error)
-//        }
+        //        do {
+        //            try NSArray(contentsOf: fileURL) as? [QuizLog]
+        ////            print(itemsArray)
+        //        } catch {
+        //            print(error)
+        //        }
         
     }
 }

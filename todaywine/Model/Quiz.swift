@@ -9,7 +9,7 @@
 import Foundation
 
 struct Quiz: Codable {
-
+    
     let id: Int
     let grade: String
     let question: String
