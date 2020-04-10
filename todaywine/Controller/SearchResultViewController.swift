@@ -10,13 +10,13 @@ import UIKit
 import MapKit
 
 class SearchResultViewController: UIViewControllerBase {
-
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var regionLabel: UILabel!
-    @IBOutlet weak var grapesLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet private weak var navigationBar: UINavigationBar!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var regionLabel: UILabel!
+    @IBOutlet private weak var grapesLabel: UILabel!
+    @IBOutlet private weak var countryLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     
     var wineDataIndex: Int = 0
@@ -42,31 +42,30 @@ class SearchResultViewController: UIViewControllerBase {
         descriptionLabel.text = _description
         
     }
-
-    @IBAction func buttonPressed(_ sender: UIButton) {
+    
+    @IBAction private func buttonPressed(_ sender: UIButton) {
         let location = CLLocation.init(latitude: _latitude, longitude: _longitude)
         performSegue(withIdentifier: "presentToMap", sender: location)
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let mapViewController = segue.destination as? MapViewController,
-        let location = sender as? CLLocation else { return }
+            let location = sender as? CLLocation else { return }
         
         // 위도 경도 전달
         mapViewController.shopAddressLatitude = location.coordinate.latitude
         mapViewController.shopAddressLongitude = location.coordinate.longitude
     }
-    
     
 }

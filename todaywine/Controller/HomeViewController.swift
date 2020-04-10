@@ -9,16 +9,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
     
-    @IBOutlet weak var nameLabel: UILabel!
-//    @IBOutlet weak var yearLabel: UILabel!
-    @IBOutlet weak var grapesLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var regionLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
     
-    var wines : [Wine] = []
+    @IBOutlet private weak var nameLabel: UILabel!
+    //    @IBOutlet private weak var yearLabel: UILabel!
+    @IBOutlet private weak var grapesLabel: UILabel!
+    @IBOutlet private weak var countryLabel: UILabel!
+    @IBOutlet private weak var regionLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    
+    private var wines : [Wine] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     }
     
     // MARK: setWineData
-    func setWineData() {
+    private func setWineData() {
         
         let hasURL = URL(string:  "\(API_URL_WINE)")!
         
@@ -52,7 +52,7 @@ class HomeViewController: UIViewController {
                 let wineIndex = Int.random(in: 0...self.wines.count-1)
                 
                 self.nameLabel.text = self.wines[wineIndex].name
-        //        self.yearLabel.text = self.wines[wineIndex].year
+                //        self.yearLabel.text = self.wines[wineIndex].year
                 self.grapesLabel.text = self.wines[wineIndex].grapes
                 self.countryLabel.text = self.wines[wineIndex].country
                 self.regionLabel.text = self.wines[wineIndex].region
@@ -60,38 +60,38 @@ class HomeViewController: UIViewController {
             }
         }.resume()
         
-//        let jsonDecoder = JSONDecoder()
-//        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
-//            return
-//        }
-//        do {
-//            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        
-//        let wineIndex = Int.random(in: 0...wines.count-1)
-//        
-//        nameLabel.text = wines[wineIndex].name
-////        yearLabel.text = wines[wineIndex].year
-//        grapesLabel.text = wines[wineIndex].grapes
-//        countryLabel.text = wines[wineIndex].country
-//        regionLabel.text = wines[wineIndex].region
-//        descriptionLabel.text = wines[wineIndex].description
-//        descriptionLabel.text = "Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley."
+        //        let jsonDecoder = JSONDecoder()
+        //        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
+        //            return
+        //        }
+        //        do {
+        //            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
+        //        } catch {
+        //            print(error.localizedDescription)
+        //        }
+        //        
+        //        let wineIndex = Int.random(in: 0...wines.count-1)
+        //        
+        //        nameLabel.text = wines[wineIndex].name
+        ////        yearLabel.text = wines[wineIndex].year
+        //        grapesLabel.text = wines[wineIndex].grapes
+        //        countryLabel.text = wines[wineIndex].country
+        //        regionLabel.text = wines[wineIndex].region
+        //        descriptionLabel.text = wines[wineIndex].description
+        //        descriptionLabel.text = "Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley."
         
         descriptionLabel.sizeToFit()
         
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

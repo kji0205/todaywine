@@ -10,7 +10,7 @@ import UIKit
 
 class QuizViewController: UIViewControllerBase {
     
-    struct Quiz {
+    private struct Quiz {
         var question: String
         var answer: Bool
     }
@@ -27,13 +27,13 @@ class QuizViewController: UIViewControllerBase {
         let margins = self.view.layoutMarginsGuide
         
         let questionLabel = UILabel(frame: self.view.bounds)
-
+        
         questionLabel.text = quiz[0].question
         questionLabel.font = .boldSystemFont(ofSize: 40)
         questionLabel.numberOfLines = 0
         questionLabel.lineBreakMode = NSLineBreakMode.byCharWrapping
         self.view.addSubview(questionLabel)
-
+        
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
         questionLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 100).isActive = true
         questionLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
@@ -64,7 +64,7 @@ class QuizViewController: UIViewControllerBase {
         
         answerFalse.topAnchor.constraint(equalTo: margins.topAnchor, constant: 200).isActive = true
         answerFalse.widthAnchor.constraint(equalTo: answerTrueMargins.widthAnchor, constant: 200).isActive = true
-//        answerFalse.leadingAnchor.constraint(greaterThanOrEqualTo: ).isActive = true
+        //        answerFalse.leadingAnchor.constraint(greaterThanOrEqualTo: ).isActive = true
         answerFalse.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         
     }

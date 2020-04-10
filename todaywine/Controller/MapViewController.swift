@@ -11,13 +11,13 @@ import MapKit
 
 class MapViewController: UIViewControllerBase, CLLocationManagerDelegate {
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet private weak var mapView: MKMapView!
     
     var shopAddressLatitude: CLLocationDegrees = 0.0
     var shopAddressLongitude: CLLocationDegrees = 0.0
     
-    let initialLocation = CLLocation(latitude: 37.3794212, longitude: 127.1120506)
-    let locationManager = CLLocationManager()
+    private let initialLocation = CLLocation(latitude: 37.3794212, longitude: 127.1120506)
+    private let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,9 @@ class MapViewController: UIViewControllerBase, CLLocationManagerDelegate {
         // 2
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: location, span: span)
-            mapView.setRegion(region, animated: true)
-            
-        //3
+        mapView.setRegion(region, animated: true)
+        
+        // 3
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         annotation.title = "고리와인샵"

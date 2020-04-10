@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewControllerBase {
     
-    var wines: [Wine] = []
+    private var wines: [Wine] = []
     
     
     override func viewDidLoad() {
@@ -27,8 +27,8 @@ class MainViewController: UIViewControllerBase {
         }
         
         let wineIndex = Int.random(in: 0...wines.count-1)
-//        questionText.text = wines[wineIndex].name
-
+        //        questionText.text = wines[wineIndex].name
+        
         
         let infoLabel = UILabel(frame: CGRect(x: 50, y: 50, width: 100, height: 50))
         infoLabel.text = "오늘의 와인"
@@ -64,7 +64,7 @@ class MainViewController: UIViewControllerBase {
         imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 28).isActive = true
-
+        
         let wineGrapeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         wineGrapeLabel.text = wines[wineIndex].grapes
         wineGrapeLabel.translatesAutoresizingMaskIntoConstraints = false

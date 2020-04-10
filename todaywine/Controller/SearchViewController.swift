@@ -11,20 +11,20 @@ import UIKit
 
 class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
     
-    var wines: [Wine] = []
+    private var wines: [Wine] = []
     
-    var filteredWineList: [Wine] = []
-    var isFiltered = false
+    private var filteredWineList: [Wine] = []
+    private var isFiltered = false
     
-    let searchVC = UISearchController(searchResultsController: nil)
+    private let searchVC = UISearchController(searchResultsController: nil)
     
-    @IBOutlet weak var searchResultTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchResultTableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     
     // MARK:- Search Log
-    var search : [SearchLog] = []
-    var store = DataStore.sharedInstance
+    private var search : [SearchLog] = []
+    private var store = DataStore.sharedInstance
     
     private let fileURL: URL = {
         let documentDirectoryURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -100,35 +100,35 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        if searchVC.isActive{
-//            searchVC.isActive = false
-//        }
+        //        if searchVC.isActive{
+        //            searchVC.isActive = false
+        //        }
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        searchBar.searchTextField.resignFirstResponder()
+        //        searchBar.searchTextField.resignFirstResponder()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-//        self.view.endEditing(true)
-//        searchBar.searchTextField.resignFirstResponder()
+        //        self.view.endEditing(true)
+        //        searchBar.searchTextField.resignFirstResponder()
     }
-
+    
     // MARK:- save
-    func save(_ result: Bool, _ searchKeyword: String) {
-
+    private func save(_ result: Bool, _ searchKeyword: String) {
+        
         let _searchLog = SearchLog.init(searchKeyword: searchKeyword, regdate: Date(), result: result)
-
+        
         self.store.searchLogs.append(_searchLog)
-
+        
         do {
             let _searchLogData = try NSKeyedArchiver.archivedData(withRootObject: self.store.searchLogs, requiringSecureCoding: false)
             UserDefaults.standard.set(_searchLogData, forKey: "SearchLog")
-          
+            
         } catch  {
             print(error)
         }
-
+        
     }
 }
 

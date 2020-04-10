@@ -10,15 +10,15 @@ import UIKit
 
 class QuizViewController2: UIViewControllerBase {
     
-    @IBOutlet weak var questionText: UILabel!
-    @IBOutlet weak var answerTrue: UIButton!
-    @IBOutlet weak var answerFalse: UIButton!
+    @IBOutlet private weak var questionText: UILabel!
+    @IBOutlet private weak var answerTrue: UIButton!
+    @IBOutlet private weak var answerFalse: UIButton!
     
     
-    var quiz : [Quiz] = []
-    var currentAnswer: Bool = false
+    private var quiz : [Quiz] = []
+    private var currentAnswer: Bool = false
     
-    var store = DataStore.sharedInstance
+    private var store = DataStore.sharedInstance
     
     private let fileURL: URL = {
         let documentDirectoryURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -33,18 +33,18 @@ class QuizViewController2: UIViewControllerBase {
         getQuizData()
     }
     
-    @IBAction func actionTrue(_ sender: Any) {
+    @IBAction private func actionTrue(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: currentAnswer ? "정답입니다":"틀렸습니다", preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .default)
         alert.addAction(action)
-
+        
         self.present(alert, animated: true, completion: nil)
         
         save(true, currentAnswer)
         
     }
     
-    @IBAction func actionFalse(_ sender: Any) {
+    @IBAction private func actionFalse(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: currentAnswer ? "틀렸습니다":"정답입니다", preferredStyle: .alert)
         let action = UIAlertAction(title: "확인", style: .default)
         alert.addAction(action)
@@ -54,10 +54,10 @@ class QuizViewController2: UIViewControllerBase {
     }
     
     // MARK: 퀴즈 기록 저장
-    func save(_ result: Bool, _ userAnswer: Bool) {
-  
+    private func save(_ result: Bool, _ userAnswer: Bool) {
+        
         let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: (result==userAnswer))
-
+        
         self.store.quizLogs.append(_quizLog)
         
         do {
@@ -70,18 +70,18 @@ class QuizViewController2: UIViewControllerBase {
     }
     
     // MARK: 퀴즈 정보 로드
-    func getQuizData() {
+    private func getQuizData() {
         
-//        let quizURLString = "https://raw.githubusercontent.com/kji0205/todaywine/master/todaywine/quiz.json"
-//
-//
-//        guard let encoded  = quizURLString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let _ = URL(string: quizURLString) else {
-//            return
-//        }
-//
-//        guard let hasURL = URL(string: encoded) else {
-//            return
-//        }
+        //        let quizURLString = "https://raw.githubusercontent.com/kji0205/todaywine/master/todaywine/quiz.json"
+        //
+        //
+        //        guard let encoded  = quizURLString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let _ = URL(string: quizURLString) else {
+        //            return
+        //        }
+        //
+        //        guard let hasURL = URL(string: encoded) else {
+        //            return
+        //        }
         
         let hasURL = URL(string:  "\(API_URL_QUIZ)")!
         

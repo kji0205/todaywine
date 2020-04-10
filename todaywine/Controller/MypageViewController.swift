@@ -10,11 +10,11 @@ import UIKit
 
 class MypageViewController: UIViewControllerBase {
     
-    @IBOutlet weak var quizHistoryLabel: UILabel!
-    @IBOutlet weak var searchHistoryLabel: UILabel!
+    @IBOutlet private weak var quizHistoryLabel: UILabel!
+    @IBOutlet private weak var searchHistoryLabel: UILabel!
     
-    var store = DataStore.sharedInstance
-    let formatter = DateFormatter()
+    private var store = DataStore.sharedInstance
+    private let formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class MypageViewController: UIViewControllerBase {
     }
     
     // MARK:- load Log
-    func loadQuizLog() {
+    private func loadQuizLog() {
         
         quizHistoryLabel.text = ""
         
@@ -46,7 +46,7 @@ class MypageViewController: UIViewControllerBase {
         quizHistoryLabel.sizeToFit()
     }
     
-    func loadSeachLog() {
+    private func loadSeachLog() {
         
         searchHistoryLabel.text = ""
         
