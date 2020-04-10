@@ -265,6 +265,59 @@
 			name = kakaoMapImage;
 			sourceTree = "<group>";
 		};
+		BF84D1862440B18A00C578CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */,
+				BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */,
+				BFDAB39023FEA4DD009CE055 /* Assets.xcassets */,
+				BFDAB39523FEA4DD009CE055 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BF84D1872440B21600C578CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
+				BFDAB38D23FEA4DA009CE055 /* Main.storyboard */,
+				BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */,
+				BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF84D1882440B24000C578CF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFDAB3C124084EA2009CE055 /* MypageViewController.swift */,
+				BFDAB38B23FEA4DA009CE055 /* ViewController.swift */,
+				BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */,
+				BFDAB3B723FEA54A009CE055 /* MainViewController.swift */,
+				BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */,
+				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
+				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
+				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
+				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
+				BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */,
+				BF39D5362431A4D80041CA74 /* MapViewController.swift */,
+				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF84D1892440B37600C578CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
+				BF406453240E92C800F20734 /* WineV2.swift */,
+				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
+				BF4380B2242639AC000C0B43 /* QuizLog.swift */,
+				BF39D538243232090041CA74 /* SearchLog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BFDAB37B23FEA4DA009CE055 = {
 			isa = PBXGroup;
 			children = (
@@ -292,36 +345,15 @@
 		BFDAB38623FEA4DA009CE055 /* todaywine */ = {
 			isa = PBXGroup;
 			children = (
-				BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */,
-				BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */,
-				BFDAB3C124084EA2009CE055 /* MypageViewController.swift */,
-				BFDAB38B23FEA4DA009CE055 /* ViewController.swift */,
-				BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */,
-				BFDAB3B723FEA54A009CE055 /* MainViewController.swift */,
-				BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */,
-				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
-				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
-				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
+				BF84D1862440B18A00C578CF /* Supporting Files */,
+				BF84D1872440B21600C578CF /* View */,
+				BF84D1882440B24000C578CF /* Controller */,
+				BF84D1892440B37600C578CF /* Model */,
 				BF1ED4B52437819700DFAC02 /* Common.swift */,
 				BF4380B624290365000C0B43 /* DataStore.swift */,
-				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
-				BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */,
-				BF39D5362431A4D80041CA74 /* MapViewController.swift */,
 				BFDAB3C92408F1F6009CE055 /* WineCell.swift */,
-				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
-				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
-				BF406453240E92C800F20734 /* WineV2.swift */,
-				BFDAB38D23FEA4DA009CE055 /* Main.storyboard */,
-				BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */,
-				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
 				BFDAB3C52408EA3F009CE055 /* wine.json */,
 				BFDAB3CF240934AF009CE055 /* quiz.json */,
-				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
-				BF4380B2242639AC000C0B43 /* QuizLog.swift */,
-				BF39D538243232090041CA74 /* SearchLog.swift */,
-				BFDAB39023FEA4DD009CE055 /* Assets.xcassets */,
-				BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */,
-				BFDAB39523FEA4DD009CE055 /* Info.plist */,
 			);
 			path = todaywine;
 			sourceTree = "<group>";
@@ -710,7 +742,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = todaywine/Info.plist;
+				INFOPLIST_FILE = "todaywine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -735,7 +767,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = todaywine/Info.plist;
+				INFOPLIST_FILE = "todaywine/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
