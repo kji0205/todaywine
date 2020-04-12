@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+// s
 class SearchLog: NSObject, NSCoding, NSSecureCoding, Comparable {
     
     static var supportsSecureCoding: Bool {
