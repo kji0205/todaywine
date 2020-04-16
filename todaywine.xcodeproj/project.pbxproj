@@ -231,7 +231,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BF39D535242FC0C40041CA74 /* kakaoMapImage */ = {
+		BF836E0D2442DBD200C6197A /* kakaoMapImage */ = {
 			isa = PBXGroup;
 			children = (
 				BF39D500242FBF010041CA74 /* copyright.png */,
@@ -262,7 +262,7 @@
 				BF39D4FE242FBF010041CA74 /* shadow_balloon.png */,
 				BF39D504242FBF020041CA74 /* th_line.png */,
 			);
-			name = kakaoMapImage;
+			path = kakaoMapImage;
 			sourceTree = "<group>";
 		};
 		BF84D1862440B18A00C578CF /* Supporting Files */ = {
@@ -323,7 +323,7 @@
 			children = (
 				BF39D4F5242FBB190041CA74 /* BridgingHeader.h */,
 				BF39D533242FBF260041CA74 /* Headers */,
-				BF39D535242FC0C40041CA74 /* kakaoMapImage */,
+				BF836E0D2442DBD200C6197A /* kakaoMapImage */,
 				BFDAB38623FEA4DA009CE055 /* todaywine */,
 				BFDAB39D23FEA4DD009CE055 /* todaywineTests */,
 				BFDAB3A823FEA4DD009CE055 /* todaywineUITests */,
