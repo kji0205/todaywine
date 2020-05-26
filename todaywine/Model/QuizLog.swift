@@ -100,7 +100,7 @@ class QuizLogDAO {
         }
         
         do {
-            let text = try String(contentsOf: fileURL, encoding: .utf8)
+            _ = try String(contentsOf: fileURL, encoding: .utf8)
         } catch  {
             print(error)
         }

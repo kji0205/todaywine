@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF1ED4B62437819700DFAC02 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1ED4B52437819700DFAC02 /* Common.swift */; };
-		BF39D4E3242F573A0041CA74 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E2242F573A0041CA74 /* OpenGLES.framework */; };
+		BF28AA182454BBF1009707CC /* todaywine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF28AA162454BBF1009707CC /* todaywine.xcdatamodeld */; };
 		BF39D4E5242F57720041CA74 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E4242F57720041CA74 /* CoreLocation.framework */; };
 		BF39D4E7242F577E0041CA74 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E6242F577E0041CA74 /* QuartzCore.framework */; };
 		BF39D4E9242F57900041CA74 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF39D4E8242F57890041CA74 /* libc++.tbd */; };
@@ -52,10 +52,15 @@
 		BF4380B3242639AC000C0B43 /* QuizLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4380B2242639AC000C0B43 /* QuizLog.swift */; };
 		BF4380B724290365000C0B43 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4380B624290365000C0B43 /* DataStore.swift */; };
 		BF7CAEBE241E3C8D0047CD70 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */; };
+		BFB3A772247A0DB100B9D5DA /* NaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A771247A0DB000B9D5DA /* NaviViewController.swift */; };
+		BFB3A774247B698C00B9D5DA /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A773247B698C00B9D5DA /* TabbarViewController.swift */; };
+		BFB3A776247B876200B9D5DA /* MyPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A775247B876200B9D5DA /* MyPageTableViewController.swift */; };
+		BFB3A778247BB97200B9D5DA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A777247BB97200B9D5DA /* UIImageViewExtension.swift */; };
+		BFB3A77A247C092900B9D5DA /* QuizViewIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A779247C092900B9D5DA /* QuizViewIntroViewController.swift */; };
+		BFB3A77C247D49A700B9D5DA /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A77B247D49A600B9D5DA /* MyScoreViewController.swift */; };
 		BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */; };
 		BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */; };
 		BFDAB38C23FEA4DA009CE055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38B23FEA4DA009CE055 /* ViewController.swift */; };
-		BFDAB38F23FEA4DA009CE055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB38D23FEA4DA009CE055 /* Main.storyboard */; };
 		BFDAB39123FEA4DD009CE055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB39023FEA4DD009CE055 /* Assets.xcassets */; };
 		BFDAB39423FEA4DD009CE055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */; };
 		BFDAB39F23FEA4DD009CE055 /* todaywineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB39E23FEA4DD009CE055 /* todaywineTests.swift */; };
@@ -108,6 +113,7 @@
 
 /* Begin PBXFileReference section */
 		BF1ED4B52437819700DFAC02 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BF28AA172454BBF1009707CC /* todaywine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = todaywine.xcdatamodel; sourceTree = "<group>"; };
 		BF39D4E2242F573A0041CA74 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF39D4E4242F57720041CA74 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BF39D4E6242F577E0041CA74 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -153,11 +159,16 @@
 		BF4380B2242639AC000C0B43 /* QuizLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLog.swift; sourceTree = "<group>"; };
 		BF4380B624290365000C0B43 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BFB3A771247A0DB000B9D5DA /* NaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviViewController.swift; sourceTree = "<group>"; };
+		BFB3A773247B698C00B9D5DA /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		BFB3A775247B876200B9D5DA /* MyPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewController.swift; sourceTree = "<group>"; };
+		BFB3A777247BB97200B9D5DA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		BFB3A779247C092900B9D5DA /* QuizViewIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewIntroViewController.swift; sourceTree = "<group>"; };
+		BFB3A77B247D49A600B9D5DA /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
 		BFDAB38423FEA4DA009CE055 /* todaywine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todaywine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BFDAB38B23FEA4DA009CE055 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BFDAB38E23FEA4DA009CE055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFDAB39023FEA4DD009CE055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFDAB39323FEA4DD009CE055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFDAB39523FEA4DD009CE055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,7 +206,6 @@
 				BF39D4EB242F57A00041CA74 /* libxml2.tbd in Frameworks */,
 				BF39D4EF242F57C60041CA74 /* SystemConfiguration.framework in Frameworks */,
 				BF39D4FC242FBE3A0041CA74 /* DaumMap.framework in Frameworks */,
-				BF39D4E3242F573A0041CA74 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +290,12 @@
 			isa = PBXGroup;
 			children = (
 				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
-				BFDAB38D23FEA4DA009CE055 /* Main.storyboard */,
 				BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */,
+				BFB3A77B247D49A600B9D5DA /* MyScoreViewController.swift */,
+				BFB3A779247C092900B9D5DA /* QuizViewIntroViewController.swift */,
+				BFB3A775247B876200B9D5DA /* MyPageTableViewController.swift */,
+				BFB3A773247B698C00B9D5DA /* TabbarViewController.swift */,
+				BFB3A771247A0DB000B9D5DA /* NaviViewController.swift */,
 				BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -290,17 +304,17 @@
 		BF84D1882440B24000C578CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
+				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
+				BF39D5362431A4D80041CA74 /* MapViewController.swift */,
 				BFDAB3C124084EA2009CE055 /* MypageViewController.swift */,
 				BFDAB38B23FEA4DA009CE055 /* ViewController.swift */,
 				BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */,
 				BFDAB3B723FEA54A009CE055 /* MainViewController.swift */,
 				BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */,
-				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
 				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
-				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
 				BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */,
-				BF39D5362431A4D80041CA74 /* MapViewController.swift */,
 				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
 			);
 			path = Controller;
@@ -321,6 +335,7 @@
 		BFDAB37B23FEA4DA009CE055 = {
 			isa = PBXGroup;
 			children = (
+				BF28AA162454BBF1009707CC /* todaywine.xcdatamodeld */,
 				BF39D4F5242FBB190041CA74 /* BridgingHeader.h */,
 				BF39D533242FBF260041CA74 /* Headers */,
 				BF836E0D2442DBD200C6197A /* kakaoMapImage */,
@@ -345,6 +360,7 @@
 		BFDAB38623FEA4DA009CE055 /* todaywine */ = {
 			isa = PBXGroup;
 			children = (
+				BFB3A777247BB97200B9D5DA /* UIImageViewExtension.swift */,
 				BF84D1862440B18A00C578CF /* Supporting Files */,
 				BF84D1872440B21600C578CF /* View */,
 				BF84D1882440B24000C578CF /* Controller */,
@@ -515,7 +531,6 @@
 				BFDAB3D0240934AF009CE055 /* quiz.json in Resources */,
 				BFDAB39423FEA4DD009CE055 /* LaunchScreen.storyboard in Resources */,
 				BFDAB39123FEA4DD009CE055 /* Assets.xcassets in Resources */,
-				BFDAB38F23FEA4DA009CE055 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,12 +555,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF28AA182454BBF1009707CC /* todaywine.xcdatamodeld in Sources */,
 				BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */,
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
+				BFB3A774247B698C00B9D5DA /* TabbarViewController.swift in Sources */,
 				BF406454240E92C800F20734 /* WineV2.swift in Sources */,
+				BFB3A778247BB97200B9D5DA /* UIImageViewExtension.swift in Sources */,
 				BF39D5372431A4D80041CA74 /* MapViewController.swift in Sources */,
 				BF1ED4B62437819700DFAC02 /* Common.swift in Sources */,
 				BF3E7E242420EC8E00931641 /* HomeViewController.swift in Sources */,
+				BFB3A776247B876200B9D5DA /* MyPageTableViewController.swift in Sources */,
 				BFDAB3CE240932D3009CE055 /* Quiz.swift in Sources */,
 				BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */,
 				BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */,
@@ -555,7 +574,10 @@
 				BFDAB3BA23FEA560009CE055 /* QuizViewController.swift in Sources */,
 				BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */,
 				BF4380B724290365000C0B43 /* DataStore.swift in Sources */,
+				BFB3A772247A0DB100B9D5DA /* NaviViewController.swift in Sources */,
 				BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */,
+				BFB3A77C247D49A700B9D5DA /* MyScoreViewController.swift in Sources */,
+				BFB3A77A247C092900B9D5DA /* QuizViewIntroViewController.swift in Sources */,
 				BF4380B3242639AC000C0B43 /* QuizLog.swift in Sources */,
 				BF39D539243232090041CA74 /* SearchLog.swift in Sources */,
 				BFDAB3C02402BE10009CE055 /* QuizViewController2.swift in Sources */,
@@ -597,14 +619,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BFDAB38D23FEA4DA009CE055 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFDAB38E23FEA4DA009CE055 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BFDAB39223FEA4DD009CE055 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -904,6 +918,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BF28AA162454BBF1009707CC /* todaywine.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BF28AA172454BBF1009707CC /* todaywine.xcdatamodel */,
+			);
+			currentVersion = BF28AA172454BBF1009707CC /* todaywine.xcdatamodel */;
+			path = todaywine.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BFDAB37C23FEA4DA009CE055 /* Project object */;
 }

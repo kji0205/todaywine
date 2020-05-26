@@ -85,7 +85,7 @@ class TodayWineViewController: UIViewControllerBase {
             print(error.localizedDescription)
         }
         
-        let wineIndex = Int.random(in: 0...wines.count-1)
+//        let wineIndex = Int.random(in: 0...wines.count-1)
         
         //        nameLabel.text = wines[wineIndex].name
         ////        yearLabel.text = wines[wineIndex].year

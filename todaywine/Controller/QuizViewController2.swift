@@ -13,10 +13,14 @@ class QuizViewController2: UIViewControllerBase {
     @IBOutlet private weak var questionText: UILabel!
     @IBOutlet private weak var answerTrue: UIButton!
     @IBOutlet private weak var answerFalse: UIButton!
+    @IBOutlet var exitButton: UIButton!
     
     
     private var quiz : [Quiz] = []
     private var currentAnswer: Bool = false
+    
+    private var userQuizIndex = 1
+    private var userQuizCountMax = 5
     
     private var store = DataStore.sharedInstance
     
@@ -31,11 +35,31 @@ class QuizViewController2: UIViewControllerBase {
         super.viewDidLoad()
         
         getQuizData()
+        
+        navigationController?.isNavigationBarHidden = true
+        
+        questionText.layer.cornerRadius = 10
+        questionText.layer.masksToBounds = true
+        
+        exitButton.layer.cornerRadius = 10
+        exitButton.layer.masksToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction private func actionTrue(_ sender: Any) {
+        
+        if quizIndexCheck() {
+            return
+        }
         let alert = UIAlertController(title: nil, message: currentAnswer ? "정답입니다":"틀렸습니다", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .default)
+        let action = UIAlertAction(title: "확인", style: .default, handler: { (action) in
+            self.nextQuizData()
+            self.btnToggle()
+        })
         alert.addAction(action)
         
         self.present(alert, animated: true, completion: nil)
@@ -45,12 +69,38 @@ class QuizViewController2: UIViewControllerBase {
     }
     
     @IBAction private func actionFalse(_ sender: Any) {
+        
+        if quizIndexCheck() {
+            self.btnToggle()
+            return
+        }
+        
         let alert = UIAlertController(title: nil, message: currentAnswer ? "틀렸습니다":"정답입니다", preferredStyle: .alert)
-        let action = UIAlertAction(title: "확인", style: .default)
+        let action = UIAlertAction(title: "확인", style: .default, handler: { (action) in
+            self.nextQuizData()
+            self.btnToggle()
+        })
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
         
         save(false, currentAnswer)
+    }
+    
+    // 문제수 체크
+    private func quizIndexCheck() -> Bool {
+        
+        btnToggle()
+        
+        if quiz.count > self.userQuizIndex, self.userQuizIndex <= self.userQuizCountMax {
+            self.userQuizIndex += 1
+            return false
+        } else {
+            let alert = UIAlertController(title: nil, message: "오늘의 문제를 다 푸셨습니다.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            return true
+        }
     }
     
     // MARK: 퀴즈 기록 저장
@@ -103,13 +153,26 @@ class QuizViewController2: UIViewControllerBase {
             }
             
             DispatchQueue.main.async {
-                let quizIndex = Int.random(in: 0...self.quiz.count-1)
-                self.questionText.text = self.quiz[quizIndex].question
-                self.questionText.sizeToFit()
-                self.currentAnswer = self.quiz[quizIndex].answer
+                self.nextQuizData()
             }
         }.resume()
         
+    }
+    
+    private func nextQuizData() {
+        let quizIndex = self.userQuizIndex - 1
+        self.questionText.text = self.quiz[quizIndex].question
+        self.questionText.sizeToFit()
+        self.currentAnswer = self.quiz[quizIndex].answer
+    }
+    
+    private func btnToggle() {
+        self.answerTrue.isEnabled = self.answerTrue.isEnabled ? false : true
+        self.answerFalse.isEnabled = self.answerFalse.isEnabled ? false : true
+    }
+    
+    @IBAction func exit(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

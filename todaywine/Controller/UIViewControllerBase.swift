@@ -12,5 +12,12 @@ class UIViewControllerBase: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = false
+        
+//        self.navigationController?.navigationBar.backgroundColor = .white
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.isTranslucent = false
     }
+    
 }

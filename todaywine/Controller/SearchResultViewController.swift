@@ -41,12 +41,13 @@ class SearchResultViewController: UIViewControllerBase {
         countryLabel.text = _country
         descriptionLabel.text = _description
         
+        descriptionLabel.sizeToFit()
     }
     
-    @IBAction private func buttonPressed(_ sender: UIButton) {
-        let location = CLLocation.init(latitude: _latitude, longitude: _longitude)
-        performSegue(withIdentifier: "presentToMap", sender: location)
-    }
+//    @IBAction private func buttonPressed(_ sender: UIButton) {
+//        let location = CLLocation.init(latitude: _latitude, longitude: _longitude)
+//        performSegue(withIdentifier: "presentToMap", sender: location)
+//    }
     
     /*
      // MARK: - Navigation
@@ -58,14 +59,14 @@ class SearchResultViewController: UIViewControllerBase {
      }
      */
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let mapViewController = segue.destination as? MapViewController,
-            let location = sender as? CLLocation else { return }
-        
-        // 위도 경도 전달
-        mapViewController.shopAddressLatitude = location.coordinate.latitude
-        mapViewController.shopAddressLongitude = location.coordinate.longitude
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        guard let mapViewController = segue.destination as? MapViewController,
+//            let location = sender as? CLLocation else { return }
+//        
+//        // 위도 경도 전달
+//        mapViewController.shopAddressLatitude = location.coordinate.latitude
+//        mapViewController.shopAddressLongitude = location.coordinate.longitude
+//    }
     
 }

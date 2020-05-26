@@ -22,6 +22,7 @@ class MapViewController: UIViewControllerBase, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.isNavigationBarHidden = false
         
         // 1
         let location = CLLocationCoordinate2D(latitude: shopAddressLatitude,

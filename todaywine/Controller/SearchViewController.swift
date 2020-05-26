@@ -106,7 +106,23 @@ class SearchViewController: UIViewControllerBase, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        //        searchBar.searchTextField.resignFirstResponder()
+//        self.searchBar.searchTextField.resignFirstResponder()
+        self.searchBar.showsCancelButton = false
+        self.searchBar.text = ""
+        self.searchBar.resignFirstResponder()
+        
+        if let hasText = searchBar.text?.lowercased() {
+            if hasText.isEmpty {
+                isFiltered = false
+            } else {
+                isFiltered = true
+                filteredWineList = wines.filter({ $0.name.lowercased().contains(hasText)})
+                
+                save(filteredWineList.count > 1, hasText)
+            }
+            searchResultTableView.reloadData()
+        }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){

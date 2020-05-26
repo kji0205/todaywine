@@ -7,23 +7,29 @@
 //
 
 import UIKit
+import MapKit
 
 class HomeViewController: UIViewController {
     
-    
+    @IBOutlet var wineImage: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     //    @IBOutlet private weak var yearLabel: UILabel!
     @IBOutlet private weak var grapesLabel: UILabel!
     @IBOutlet private weak var countryLabel: UILabel!
     @IBOutlet private weak var regionLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet var goToMapBtn: UIButton!
     
     private var wines : [Wine] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setWineData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: setWineData
@@ -43,13 +49,19 @@ class HomeViewController: UIViewController {
             
             do {
                 self.wines = try decoder.decode([Wine].self, from: data)
-                print("quiz ==> \(self.wines)")
+//                print("quiz ==> \(self.wines)")
             } catch {
                 print("error ==> \(error)")
             }
             
             DispatchQueue.main.async {
                 let wineIndex = Int.random(in: 0...self.wines.count-1)
+                
+                if let imageUrl = self.wines[wineIndex].image {
+                    self.wineImage.downloaded(from: imageUrl, contentMode: .scaleAspectFill)
+                } else {
+                    self.wineImage.image = UIImage(named: "wine-image-default")
+                }
                 
                 self.nameLabel.text = self.wines[wineIndex].name
                 //        self.yearLabel.text = self.wines[wineIndex].year
@@ -84,14 +96,22 @@ class HomeViewController: UIViewController {
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    var _latitude: CLLocationDegrees = 37.3794212
+    var _longitude: CLLocationDegrees = 127.1120506
+    
+    @IBAction private func buttonPressed(_ sender: UIButton) {
+        let location = CLLocation.init(latitude: _latitude, longitude: _longitude)
+        performSegue(withIdentifier: "presentToMapByMain", sender: location)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let mapViewController = segue.destination as? MapViewController,
+            let location = sender as? CLLocation else { return }
+        
+        // 위도 경도 전달
+        mapViewController.shopAddressLatitude = location.coordinate.latitude
+        mapViewController.shopAddressLongitude = location.coordinate.longitude
+    }
     
 }

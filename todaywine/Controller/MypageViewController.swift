@@ -22,7 +22,7 @@ class MypageViewController: UIViewControllerBase {
         quizHistoryLabel.text = ""
         searchHistoryLabel.text = ""
         
-        formatter.dateFormat = " yyyy년 MM월 dd일 HH시 mm분 "
+        formatter.dateFormat = "yyyy-MM-dd HH:mm "
     }
     
     override func viewWillAppear(_ animated: Bool) {
