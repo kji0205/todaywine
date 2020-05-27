@@ -12,18 +12,14 @@ class MyScoreViewController: UIViewControllerBase {
 
     private var store = DataStore.sharedInstance
     private let formatter = DateFormatter()
+    
     @IBOutlet var scoreView: UIView!
     @IBOutlet var myScore: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        formatter.dateFormat = "yyyy-MM-dd HH:mm "
-        scoreView.layer.cornerRadius = 10
-        scoreView.layer.masksToBounds = true
-        
-        scoreView.layer.borderWidth = 7
-        scoreView.layer.borderColor = UIColor.lightGray.cgColor
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +31,17 @@ class MyScoreViewController: UIViewControllerBase {
         myScore.text = String(resultData.0) + "%"
     }
     
+    private func setupUI() {
+        formatter.dateFormat = "yyyy-MM-dd HH:mm "
+        scoreView.layer.cornerRadius = 10
+        scoreView.layer.masksToBounds = true
+        
+        scoreView.layer.borderWidth = 7
+        scoreView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
+    }
+    
     private func winPecent() -> (Int, Int, Int) {
         let fileteredTrue = store.quizLogs.filter {
             $0.result
@@ -42,8 +49,6 @@ class MyScoreViewController: UIViewControllerBase {
         let fileteredFalse = store.quizLogs.filter {
             !$0.result
         }
-        print("true count: \(fileteredTrue.count)")
-        print("false count: \(fileteredFalse.count)")
         
         var correctAnswerRate = 0
         

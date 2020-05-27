@@ -1,8 +1,8 @@
 //
-//  QuizViewController.swift
+//  QuizViewController2.swift
 //  todaywine
 //
-//  Created by jimmy on 2020/02/20.
+//  Created by jimmy on 2020/02/23.
 //  Copyright © 2020 jimmy. All rights reserved.
 //
 
@@ -10,62 +10,113 @@ import UIKit
 
 class QuizViewController: UIViewControllerBase {
     
-    private struct Quiz {
-        var question: String
-        var answer: Bool
-    }
+    @IBOutlet private weak var questionText: UILabel!
+    @IBOutlet private weak var answerTrue: UIButton!
+    @IBOutlet private weak var answerFalse: UIButton!
+    @IBOutlet var exitButton: UIButton!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    private var store = DataStore.sharedInstance
+    
+    let quizBrain = QuizBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI() {
+        questionText.layer.cornerRadius = 10
+        questionText.layer.masksToBounds = true
         
-        let quiz = [
-            Quiz(question: "Wine maked grape. and, and, and...", answer: true),
-            Quiz(question: "notebook is computer.", answer: true),
-            Quiz(question: "bon jovi is president.", answer: false),
-        ]
+        exitButton.layer.cornerRadius = 10
+        exitButton.layer.masksToBounds = true
         
-        let margins = self.view.layoutMarginsGuide
+        exitButton.isHidden = true
         
-        let questionLabel = UILabel(frame: self.view.bounds)
+        showTheNextQuiz()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    @IBAction private func actionCorrectCheck(_ sender: UIButton) {
         
-        questionLabel.text = quiz[0].question
-        questionLabel.font = .boldSystemFont(ofSize: 40)
-        questionLabel.numberOfLines = 0
-        questionLabel.lineBreakMode = NSLineBreakMode.byCharWrapping
-        self.view.addSubview(questionLabel)
+        if !quizBrain.quizIndexCheck() {
+            showEndQuiz()
+            return
+        }
         
-        questionLabel.translatesAutoresizingMaskIntoConstraints = false
-        questionLabel.topAnchor.constraint(equalTo: margins.topAnchor, constant: 100).isActive = true
-        questionLabel.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        questionLabel.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
-        questionLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        guard let answer = sender.currentTitle else {
+            return
+        }
+        let result = quizBrain.takeQuiz(userAnswer: answer == "O")
         
+        let alert = UIAlertController(title: nil, message: result ? "정답입니다":"틀렸습니다", preferredStyle: .alert)
         
-        let answerTrue = UILabel(frame: self.view.bounds)
-        answerTrue.text = "O"
-        answerTrue.font = .boldSystemFont(ofSize: 40)
-        answerTrue.textColor = .green
-        answerTrue.translatesAutoresizingMaskIntoConstraints = true
-        self.view.addSubview(answerTrue)
+        self.descriptionLabel.text = quizBrain.currentQuizDescription
         
-        answerTrue.topAnchor.constraint(equalTo: margins.topAnchor, constant: 200).isActive = true
-        answerTrue.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        answerTrue.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
-        answerTrue.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        let action = UIAlertAction(title: "확인", style: .default, handler: { (action) in
+            self.quizBrain.getTheNextQuiz()
+            if self.quizBrain.quizIndexCheck() {
+                self.showTheNextQuiz()
+            } else {
+                self.showEndQuiz()
+                return
+            }
+//            self.btnToggle()
+        })
+        alert.addAction(action)
         
-        let answerFalse = UILabel(frame: self.view.bounds)
-        answerFalse.text = "X"
-        answerFalse.font = .boldSystemFont(ofSize: 40)
-        answerFalse.textColor = .red
-        answerFalse.translatesAutoresizingMaskIntoConstraints = true
-        self.view.addSubview(answerFalse)
+        self.present(alert, animated: true, completion: nil)
         
-        let answerTrueMargins = answerTrue.layoutMarginsGuide
-        
-        answerFalse.topAnchor.constraint(equalTo: margins.topAnchor, constant: 200).isActive = true
-        answerFalse.widthAnchor.constraint(equalTo: answerTrueMargins.widthAnchor, constant: 200).isActive = true
-        //        answerFalse.leadingAnchor.constraint(greaterThanOrEqualTo: ).isActive = true
-        answerFalse.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
+        save(answer == "O", quizBrain.answerToTheCurrentQuiz)
         
     }
+    
+    // MARK: 문제를 다 풀었을 경우
+    private func showEndQuiz() {
+        let alert = UIAlertController(title: nil, message: "오늘의 문제를 다 푸셨습니다.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "확인", style: .default, handler: { (action) in
+//            self.navigationController?.popViewController(animated: true)
+            self.exitButton.isHidden = false
+        })
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: 다음 퀴즈 보여주기
+    private func showTheNextQuiz() {
+        self.questionText.text = quizBrain.currentQuiz
+        self.questionText.sizeToFit()
+    }
+    
+    // MARK: 퀴즈 기록 저장
+    private func save(_ result: Bool, _ userAnswer: Bool) {
+        
+        let _quizLog = QuizLog.init(idx: 1, regdate: Date(), result: (result==userAnswer))
+        
+        self.store.quizLogs.append(_quizLog)
+        
+        do {
+            let _quizLogData = try NSKeyedArchiver.archivedData(withRootObject: self.store.quizLogs, requiringSecureCoding: false)
+            UserDefaults.standard.set(_quizLogData, forKey: "QuizLog")
+            
+        } catch  {
+            print(error)
+        }
+    }
+    
+    
+    private func btnToggle() {
+        self.answerTrue.isEnabled = self.answerTrue.isEnabled ? false : true
+        self.answerFalse.isEnabled = self.answerFalse.isEnabled ? false : true
+    }
+    
+    @IBAction func exit(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

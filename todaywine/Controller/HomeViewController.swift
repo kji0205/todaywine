@@ -35,69 +35,68 @@ class HomeViewController: UIViewController {
     // MARK: setWineData
     private func setWineData() {
         
-        let hasURL = URL(string:  "\(API_URL_WINE)")!
+//        let hasURL = URL(string:  "\(API_URL_WINE)")!
+//
+//        URLSession.shared.dataTask(with: hasURL) { (data, response, error) in
+//
+//            guard let data = data else {
+//                let alert = UIAlertController.init(title: "와인 정보가 없음", message: nil, preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+//                return
+//            }
+//
+//            let decoder = JSONDecoder()
+//
+//            do {
+//                self.wines = try decoder.decode([Wine].self, from: data)
+//            } catch {
+//                print("error ==> \(error)")
+//            }
+//
+//            DispatchQueue.main.async {
+//                let wineIndex = Int.random(in: 0...self.wines.count-1)
+//
+//                if let imageUrl = self.wines[wineIndex].image {
+//                    self.wineImage.downloaded(from: imageUrl, contentMode: .scaleAspectFill)
+//                } else {
+//                    self.wineImage.image = UIImage(named: "wine-image-default")
+//                }
+//
+//                self.nameLabel.text = self.wines[wineIndex].name
+//                //        self.yearLabel.text = self.wines[wineIndex].year
+//                self.grapesLabel.text = self.wines[wineIndex].grapes
+//                self.countryLabel.text = self.wines[wineIndex].country
+//                self.regionLabel.text = self.wines[wineIndex].region
+//                self.descriptionLabel.text = self.wines[wineIndex].description
+//            }
+//        }.resume()
         
-        URLSession.shared.dataTask(with: hasURL) { (data, response, error) in
-            
-            guard let data = data else {
-                let alert = UIAlertController.init(title: "와인 정보가 없음", message: nil, preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                self.wines = try decoder.decode([Wine].self, from: data)
-//                print("quiz ==> \(self.wines)")
-            } catch {
-                print("error ==> \(error)")
-            }
-            
-            DispatchQueue.main.async {
-                let wineIndex = Int.random(in: 0...self.wines.count-1)
-                
-                if let imageUrl = self.wines[wineIndex].image {
-                    self.wineImage.downloaded(from: imageUrl, contentMode: .scaleAspectFill)
-                } else {
-                    self.wineImage.image = UIImage(named: "wine-image-default")
-                }
-                
-                self.nameLabel.text = self.wines[wineIndex].name
-                //        self.yearLabel.text = self.wines[wineIndex].year
-                self.grapesLabel.text = self.wines[wineIndex].grapes
-                self.countryLabel.text = self.wines[wineIndex].country
-                self.regionLabel.text = self.wines[wineIndex].region
-                self.descriptionLabel.text = self.wines[wineIndex].description
-            }
-        }.resume()
+        let jsonDecoder = JSONDecoder()
+        guard let wineData : NSDataAsset = NSDataAsset(name: "wine-data") else {
+            return
+        }
+        do {
+            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
+        } catch {
+            print(error.localizedDescription)
+        }
         
-        //        let jsonDecoder = JSONDecoder()
-        //        guard let wineData : NSDataAsset = NSDataAsset(name: "wine") else {
-        //            return
-        //        }
-        //        do {
-        //            self.wines = try jsonDecoder.decode([Wine].self, from: wineData.data)
-        //        } catch {
-        //            print(error.localizedDescription)
-        //        }
-        //        
-        //        let wineIndex = Int.random(in: 0...wines.count-1)
-        //        
-        //        nameLabel.text = wines[wineIndex].name
-        ////        yearLabel.text = wines[wineIndex].year
-        //        grapesLabel.text = wines[wineIndex].grapes
-        //        countryLabel.text = wines[wineIndex].country
-        //        regionLabel.text = wines[wineIndex].region
-        //        descriptionLabel.text = wines[wineIndex].description
-        //        descriptionLabel.text = "Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley.Cabernet Sauvignon (French: [kabɛʁnɛ soviˈɲɔ̃]) is one of the world's most widely recognized red wine grape varieties. It is grown in nearly every major wine producing country among a diverse spectrum of climates from Canada's Okanagan Valley to Lebanon's Beqaa Valley."
+        let wineIndex = Int.random(in: 0...wines.count-1)
+        
+        nameLabel.text = wines[wineIndex].name
+//        yearLabel.text = wines[wineIndex].year
+        grapesLabel.text = wines[wineIndex].grapes
+        countryLabel.text = wines[wineIndex].country
+        regionLabel.text = wines[wineIndex].region
+        descriptionLabel.text = wines[wineIndex].description
+        wineImage.image = UIImage(named: wines[wineIndex].image!)
         
         descriptionLabel.sizeToFit()
         
     }
     
-    var _latitude: CLLocationDegrees = 37.3794212
-    var _longitude: CLLocationDegrees = 127.1120506
+    let _latitude: CLLocationDegrees = 37.3794212
+    let _longitude: CLLocationDegrees = 127.1120506
     
     @IBAction private func buttonPressed(_ sender: UIButton) {
         let location = CLLocation.init(latitude: _latitude, longitude: _longitude)

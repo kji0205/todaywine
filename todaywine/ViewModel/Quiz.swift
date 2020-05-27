@@ -15,6 +15,6 @@ struct Quiz: Codable {
     let question: String
     let answer: Bool
     let description: String
-    let created_at: String
-    let updated_at: String
+//    let created_at: String
+//    let updated_at: String
 }

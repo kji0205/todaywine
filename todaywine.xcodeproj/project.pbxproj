@@ -58,6 +58,9 @@
 		BFB3A778247BB97200B9D5DA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A777247BB97200B9D5DA /* UIImageViewExtension.swift */; };
 		BFB3A77A247C092900B9D5DA /* QuizViewIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A779247C092900B9D5DA /* QuizViewIntroViewController.swift */; };
 		BFB3A77C247D49A700B9D5DA /* MyScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A77B247D49A600B9D5DA /* MyScoreViewController.swift */; };
+		BFB3A77E247DE9CC00B9D5DA /* wine-data.json in Resources */ = {isa = PBXBuildFile; fileRef = BFB3A77D247DE9CC00B9D5DA /* wine-data.json */; };
+		BFB3A780247DFBFF00B9D5DA /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A77F247DFBFF00B9D5DA /* QuizBrain.swift */; };
+		BFB3A783247EA20C00B9D5DA /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A782247EA20B00B9D5DA /* SetupViewController.swift */; };
 		BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */; };
 		BFDAB38A23FEA4DA009CE055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */; };
 		BFDAB38C23FEA4DA009CE055 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB38B23FEA4DA009CE055 /* ViewController.swift */; };
@@ -66,10 +69,9 @@
 		BFDAB39F23FEA4DD009CE055 /* todaywineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB39E23FEA4DD009CE055 /* todaywineTests.swift */; };
 		BFDAB3AA23FEA4DD009CE055 /* todaywineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3A923FEA4DD009CE055 /* todaywineUITests.swift */; };
 		BFDAB3B823FEA54A009CE055 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3B723FEA54A009CE055 /* MainViewController.swift */; };
-		BFDAB3BA23FEA560009CE055 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3B923FEA560009CE055 /* QuizViewController.swift */; };
 		BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */; };
 		BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */; };
-		BFDAB3C02402BE10009CE055 /* QuizViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */; };
+		BFDAB3C02402BE10009CE055 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3BF2402BE10009CE055 /* QuizViewController.swift */; };
 		BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3C124084EA2009CE055 /* MypageViewController.swift */; };
 		BFDAB3C62408EA3F009CE055 /* wine.json in Resources */ = {isa = PBXBuildFile; fileRef = BFDAB3C52408EA3F009CE055 /* wine.json */; };
 		BFDAB3C82408EA9D009CE055 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDAB3C72408EA9D009CE055 /* Wine.swift */; };
@@ -165,6 +167,9 @@
 		BFB3A777247BB97200B9D5DA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		BFB3A779247C092900B9D5DA /* QuizViewIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewIntroViewController.swift; sourceTree = "<group>"; };
 		BFB3A77B247D49A600B9D5DA /* MyScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScoreViewController.swift; sourceTree = "<group>"; };
+		BFB3A77D247DE9CC00B9D5DA /* wine-data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "wine-data.json"; sourceTree = "<group>"; };
+		BFB3A77F247DFBFF00B9D5DA /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		BFB3A782247EA20B00B9D5DA /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		BFDAB38423FEA4DA009CE055 /* todaywine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todaywine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDAB38723FEA4DA009CE055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDAB38923FEA4DA009CE055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,10 +184,9 @@
 		BFDAB3A923FEA4DD009CE055 /* todaywineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todaywineUITests.swift; sourceTree = "<group>"; };
 		BFDAB3AB23FEA4DD009CE055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFDAB3B723FEA54A009CE055 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		BFDAB3B923FEA560009CE055 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerBase.swift; sourceTree = "<group>"; };
-		BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController2.swift; sourceTree = "<group>"; };
+		BFDAB3BF2402BE10009CE055 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		BFDAB3C124084EA2009CE055 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		BFDAB3C52408EA3F009CE055 /* wine.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wine.json; sourceTree = "<group>"; };
 		BFDAB3C72408EA9D009CE055 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 				BFDAB3CA2408F1F6009CE055 /* WineCell.xib */,
 				BF7CAEBD241E3C8D0047CD70 /* Home.storyboard */,
 				BFB3A77B247D49A600B9D5DA /* MyScoreViewController.swift */,
+				BFB3A782247EA20B00B9D5DA /* SetupViewController.swift */,
 				BFB3A779247C092900B9D5DA /* QuizViewIntroViewController.swift */,
 				BFB3A775247B876200B9D5DA /* MyPageTableViewController.swift */,
 				BFB3A773247B698C00B9D5DA /* TabbarViewController.swift */,
@@ -305,14 +310,13 @@
 			isa = PBXGroup;
 			children = (
 				BF3E7E232420EC8E00931641 /* HomeViewController.swift */,
-				BFDAB3BF2402BE10009CE055 /* QuizViewController2.swift */,
+				BFDAB3BF2402BE10009CE055 /* QuizViewController.swift */,
 				BF39D5362431A4D80041CA74 /* MapViewController.swift */,
 				BFDAB3C124084EA2009CE055 /* MypageViewController.swift */,
 				BFDAB38B23FEA4DA009CE055 /* ViewController.swift */,
 				BFDAB3BD23FEC352009CE055 /* UIViewControllerBase.swift */,
 				BFDAB3B723FEA54A009CE055 /* MainViewController.swift */,
 				BFDAB3D124097FE5009CE055 /* TodayWineViewController.swift */,
-				BFDAB3B923FEA560009CE055 /* QuizViewController.swift */,
 				BFDAB3BB23FEA575009CE055 /* SearchViewController.swift */,
 				BF3EF410240D9A0C00036FD1 /* SearchResultViewController.swift */,
 				BFDAB3D3240B9D5C009CE055 /* RecommendWineViewController.swift */,
@@ -320,7 +324,7 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BF84D1892440B37600C578CF /* Model */ = {
+		BF84D1892440B37600C578CF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				BFDAB3C72408EA9D009CE055 /* Wine.swift */,
@@ -328,6 +332,14 @@
 				BFDAB3CD240932D3009CE055 /* Quiz.swift */,
 				BF4380B2242639AC000C0B43 /* QuizLog.swift */,
 				BF39D538243232090041CA74 /* SearchLog.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BFB3A781247DFC0900B9D5DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3A77F247DFBFF00B9D5DA /* QuizBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,11 +376,13 @@
 				BF84D1862440B18A00C578CF /* Supporting Files */,
 				BF84D1872440B21600C578CF /* View */,
 				BF84D1882440B24000C578CF /* Controller */,
-				BF84D1892440B37600C578CF /* Model */,
+				BFB3A781247DFC0900B9D5DA /* Model */,
+				BF84D1892440B37600C578CF /* ViewModel */,
 				BF1ED4B52437819700DFAC02 /* Common.swift */,
 				BF4380B624290365000C0B43 /* DataStore.swift */,
 				BFDAB3C92408F1F6009CE055 /* WineCell.swift */,
 				BFDAB3C52408EA3F009CE055 /* wine.json */,
+				BFB3A77D247DE9CC00B9D5DA /* wine-data.json */,
 				BFDAB3CF240934AF009CE055 /* quiz.json */,
 			);
 			path = todaywine;
@@ -502,6 +516,7 @@
 				BF39D519242FBF040041CA74 /* shadow_balloon.png in Resources */,
 				BF39D51A242FBF040041CA74 /* map_pin_custom.png in Resources */,
 				BF39D51B242FBF040041CA74 /* copyright.png in Resources */,
+				BFB3A77E247DE9CC00B9D5DA /* wine-data.json in Resources */,
 				BF39D51C242FBF040041CA74 /* map_pinup@3x.png in Resources */,
 				BF39D51D242FBF040041CA74 /* point_sprite.png in Resources */,
 				BF39D51E242FBF040041CA74 /* map_pinup_custom.png in Resources */,
@@ -559,6 +574,7 @@
 				BFDAB3C224084EA3009CE055 /* MypageViewController.swift in Sources */,
 				BFDAB3BC23FEA575009CE055 /* SearchViewController.swift in Sources */,
 				BFB3A774247B698C00B9D5DA /* TabbarViewController.swift in Sources */,
+				BFB3A783247EA20C00B9D5DA /* SetupViewController.swift in Sources */,
 				BF406454240E92C800F20734 /* WineV2.swift in Sources */,
 				BFB3A778247BB97200B9D5DA /* UIImageViewExtension.swift in Sources */,
 				BF39D5372431A4D80041CA74 /* MapViewController.swift in Sources */,
@@ -570,8 +586,8 @@
 				BFDAB3BE23FEC352009CE055 /* UIViewControllerBase.swift in Sources */,
 				BFDAB38C23FEA4DA009CE055 /* ViewController.swift in Sources */,
 				BFDAB3CB2408F1F6009CE055 /* WineCell.swift in Sources */,
+				BFB3A780247DFBFF00B9D5DA /* QuizBrain.swift in Sources */,
 				BF3EF411240D9A0C00036FD1 /* SearchResultViewController.swift in Sources */,
-				BFDAB3BA23FEA560009CE055 /* QuizViewController.swift in Sources */,
 				BFDAB38823FEA4DA009CE055 /* AppDelegate.swift in Sources */,
 				BF4380B724290365000C0B43 /* DataStore.swift in Sources */,
 				BFB3A772247A0DB100B9D5DA /* NaviViewController.swift in Sources */,
@@ -580,7 +596,7 @@
 				BFB3A77A247C092900B9D5DA /* QuizViewIntroViewController.swift in Sources */,
 				BF4380B3242639AC000C0B43 /* QuizLog.swift in Sources */,
 				BF39D539243232090041CA74 /* SearchLog.swift in Sources */,
-				BFDAB3C02402BE10009CE055 /* QuizViewController2.swift in Sources */,
+				BFDAB3C02402BE10009CE055 /* QuizViewController.swift in Sources */,
 				BFDAB3D224097FE5009CE055 /* TodayWineViewController.swift in Sources */,
 				BFDAB3D4240B9D5C009CE055 /* RecommendWineViewController.swift in Sources */,
 				BFDAB3B823FEA54A009CE055 /* MainViewController.swift in Sources */,

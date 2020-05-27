@@ -39,7 +39,7 @@ class TodayWineViewController: UIViewControllerBase {
     private func setupLayout() {
         
         let contentView: UIView
-        let contentScrollView: UIView
+//        let contentScrollView: UIView
         
         
         // MARK: navigationBar
