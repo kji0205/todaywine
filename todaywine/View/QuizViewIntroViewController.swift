@@ -61,19 +61,46 @@ class QuizViewIntroViewController: UIViewController {
                 .constraint(equalTo:view.centerXAnchor)
                 .isActive = true
             myScoreView.centerYAnchor
-                .constraint(equalTo:view.centerYAnchor)
+                .constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor)
                 .isActive = true
             myScoreView.heightAnchor
-                .constraint(equalToConstant: 300)
+                .constraint(equalTo: self.view.heightAnchor, multiplier: 0.45)
                 .isActive = true
-            myScoreView.widthAnchor
-                .constraint(equalToConstant: 200)
-                .isActive = true
+            myScoreView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
+//            myScoreView.widthAnchor
+//                .constraint(equalToConstant: 200)
+//                .isActive = true
+            
+            // 완료 메세지 라벨
+            let resultMessageLabel = UILabel()
+            resultMessageLabel.text = "오늘은 퀴즈를 다 푸셨습니다."
+            resultMessageLabel.font = UIFont.systemFont(ofSize: CGFloat(20))
+            resultMessageLabel.textAlignment = .center
+            myScoreView.addSubview(resultMessageLabel)
+            resultMessageLabel.translatesAutoresizingMaskIntoConstraints = false
+            resultMessageLabel.centerXAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+            resultMessageLabel.topAnchor
+                .constraint(equalTo: myScoreView.bottomAnchor, constant: 10.0).isActive = true
+            
+            // 정답률 타이틀 라벨
+            let resultTitleLabel = UILabel()
+            resultTitleLabel.text = "오늘의 정답률"
+            resultTitleLabel.font = UIFont.systemFont(ofSize: CGFloat(40))
+            resultTitleLabel.textAlignment = .center
+            resultTitleLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+            myScoreView.addSubview(resultTitleLabel)
+            resultTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+            resultTitleLabel.centerXAnchor
+                .constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+            resultTitleLabel.topAnchor
+                .constraint(equalTo: myScoreView.topAnchor, constant: 30.0).isActive = true
             
             // 정답률 라벨
             let scoreLabel = UILabel()
             scoreLabel.text = "\(todayScore.0)%"
             scoreLabel.font = UIFont.systemFont(ofSize: CGFloat(50))
+            scoreLabel.textColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
             myScoreView.addSubview(scoreLabel)
             
             scoreLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -118,9 +145,6 @@ class QuizViewIntroViewController: UIViewController {
             correctAnswerRate = Int((Float(fileteredTrue.count) / Float(todayScore.count)) * 100.0)
         }
         
-        print("true count: \(fileteredTrue.count)")
-        print("false count: \(fileteredFalse.count)")
-        print("correctAnswerRate: \(correctAnswerRate)")
         
         return (correctAnswerRate, fileteredTrue.count, fileteredFalse.count)
         
